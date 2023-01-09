@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+Interface based on the graphics of LCARS from Star Trek:
+L.C.A.R.S - Library Computer Access & Retrieval System
+N.A.N - Nimble Automation Network
+
+Logo by <a href="https://www.freepik.com/free-vector/flat-sparkling-star-collection_15591195.htm#query=star%20logo&position=1&from_view=search&track=sph">Freepik</a>
+<br>
+<a href="https://www.freepik.com/free-vector/creative-galaxy-logo-template_21742725.htm#query=rocket%20logo&position=3&from_view=keyword">Image by pikisuperstar</a> on Freepik
+-->
+<html>
+<head>
+  <title>L.C.A.R.S.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/lcars.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+<!--  <link rel="icon" href="https://stevenlyles.net/assets/graphics/true-north.png">-->
+  <link rel="shortcut icon" url="./assets/true-north.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="container-main">
+
+  <div class="container-header">
+    <div class="container-frames">
+      <div class="container-frame-left container-frame-left-top">
+        <div class="panel-logo">
+          <a href="" style="font-size: 8px;"></a>
+        </div>
+        <div class="menu-spacer"></div>
+        <div id="panel-time" class="panel-time"></div>
+      </div>
+      <div class="container-frame-right">
+        <div class="banner">MAIN TITLE &#149; SECONDARY</div>
+        <div class="container-stations">
+          <div class="button-station active">Snoopy</div>
+          <div class="button-station">Woodstock</div>
+          <div class="button-station">Linus</div>
+          <div class="button-station">Charlie Brown</div>
+          <div class="button-station">Sally</div>
+          <div class="button-station">Lucy</div>
+        </div>
+        <div class="top-corner-bg">
+          <div class="top-corner"></div>
+        </div>
+        <div class="bar-panel">
+          <div class="bar-1"></div>
+          <div class="bar-2"></div>
+          <div class="bar-3"></div>
+          <div class="bar-4"></div>
+          <div class="bar-5"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container-content">
+    <div class="container-frames">
+      <div class="container-frame-left-middle">
+        <div class="panel-home">
+          <div id="button-home" class="button-content-container">
+            <span id="menu-home-txt" class="menu-text">HOME</span>
+            <img id="menu-home-icon" class="menu-icon" src="./assets/home.svg" alt="HOME"/>
+          </div>
+        </div>
+<!--        <div class="menu-spacer"></div>-->
+        <div class="panel-buttons">
+          <div id="button-station" class="button">
+            <div class="button-content-container">
+              <span id="menu-station-txt" class="menu-text">NETWORK</span>
+              <img id="menu-station-icon" class="menu-icon" src="./assets/stations.svg" alt="NETWORK"/>
+            </div>
+          </div>
+          <div id="button-automations" class="button">
+            <div class="button-content-container">
+              <span id="menu-automation-txt" class="menu-text">SETTINGS</span>
+              <img id="menu-automation-icon" class="menu-icon" src="./assets/gear.svg" alt="SETTINGS"/>
+            </div>
+          </div>
+          <div id="button-results" class="button">
+            <div class="button-content-container">
+              <span id="menu-results-txt" class="menu-text">ARTICLES</span>
+              <img id="menu-results-icon" class="menu-icon" src="./assets/results2.svg" alt="ARTICLES"/>
+            </div>
+          </div>
+        </div>
+        <div class="menu-spacer"></div>
+        <div class="panel-spacer"></div>
+      </div>
+      <div class="container-frame-right">
+        <div class="bar-panel">
+          <div class="bar-6"></div>
+          <div class="bar-7"></div>
+          <div class="bar-8"></div>
+          <div class="bar-9"></div>
+          <div class="bar-10"></div>
+        </div>
+        <div class="corner-bg">
+          <div class="corner"></div>
+        </div>
+
+
+        <div id="subject-bar" class="subject-bar">
+          <div class="container-subject-menu-buttons">
+            <div id="subject-menu-button-0" class="subject-menu-button" style="background-color: #99dd66;">WELCOME</div>
+            <div id="subject-menu-button-1" class="subject-menu-button">LOGIN</div>
+            <div id="subject-menu-button-2" class="subject-menu-button">LOGOUT</div>
+          </div>
+          <div class="subject-bar-spacer"></div>
+          <div id="subject-title-container" class="subject-title-container">
+            <div id="subject-title" class="subject-title">WELCOME</div>
+          </div>
+        </div>
+
+
+        <div id="content" class="container-subject">
+<!--          <div class="content">-->
+<!--            <%= yield %>-->
+<!--          </div>-->
+          <div id="welcome-message-info">
+            <p>Welcome User!</p>
+            <p>LCARS Network - Snoopy Station</p>
+          </div>
+
+
+<!--          <iframe src="test_results.html" name="targetframe" frameborder="0" scrolling="auto" width="100%"></iframe>-->
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container-footer">
+    <div class="container-frames">
+      <div class="container-frame-left container-frame-left-bottom">
+      </div>
+      <div class="container-frame-right">
+        <div class="footer-spacer">
+          <div class="powered-by-text">POWERED BY</div>
+          <a class="powered-by-html5" href="https://www.w3schools.com/html/" target="_blank">
+            <img id="html5-icon" class="powered-by-icon" src="./assets/html_5_logo.png" alt="HTML5" width="18px">
+          </a>
+          <a class="powered-by-css3" href="https://en.wikipedia.org/wiki/CSS" target="_blank">
+            <img id="css3-icon" class="powered-by-icon" src="./assets/css_3_logo.png" alt="HTML5" width="18px">
+          </a>
+          <a class="powered-by-jquery" href="https://jquery.com" target="_blank">
+            <img id="jquery-icon" class="powered-by-icon" src="./assets/jquery_logo.png" alt="HTML5" width="20px">
+          </a>
+        </div>
+        <div class="top-corner-bg">
+          <div class="top-corner"></div>
+        </div>
+        <div class="bar-panel">
+          <div class="bar-1"></div>
+          <div class="bar-11"></div>
+          <div class="bar-3"></div>
+          <div class="bar-4"></div>
+          <div class="bar-5"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="js/lcars.js"></script>
+<script type="text/javascript" src="./js/now.js"></script>
+<script>
+    let now_config = {
+        "font_size" : 18, // px
+        "font_color" : "black",
+        "background_color" : "#2255FF"
+    }
+    let now_widget = new Now("panel-time", now_config);
+</script>
+</body>
+</html>
