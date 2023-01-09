@@ -11,24 +11,6 @@ body {
     overflow: hidden;
 }
 
-/* Colors */
-.moss         { background: #355E3B; }
-.evening      { background: #2255ff; }
-.midnight     { background: #1111ee; }
-.ghost        { background: #88bbff; }
-.wheat        { background: #ccaa88; }
-.roseblush    { background: #cc6666; }
-.honey        { background: #ffcc99; }
-.cardinal     { background: #cc2233; }
-.pumpkinshade { background: #e67642; }
-.tangerine    { background: #ff8833; }
-.martian      { background: #99dd66; }
-.moonbeam     { background: #ccdeff; }
-.cool         { background: #5588ff; }
-.galaxy       { background: #444a77; }
-.moonshine    { background: #ddeeff; }
-.ice          { background: #88ccff; }
-
 .container-main {
     display: flex;
     flex-flow: column;

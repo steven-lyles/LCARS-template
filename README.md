@@ -1,11 +1,16 @@
 # LCARS Template
-**L**ibrary **C**omputer **A**ccess and **R**etrival **S**ystem is the pseudo OS that was invented as a visual prop for 
+**L**ibrary **C**omputer **A**ccess and **R**etrival **S**ystem is the fictional OS that was invented as a visual prop for 
 Star Trek TNG. This project is creating a very modular implementation for a webpage or app. This is still very much a work 
-in progress.
+in progress. Currently this code is an HTML/Javascript client side implementation only, but I am working on a server side 
+implementation using Ruby and Sinatra... stay tuned!
+
+This project was greatly inspired by the work of Jim Robertus and his [LCARS Website Template](https://www.thelcars.com). My version has 
+evolved to an entirely different implementation, but I want to give Jim credit for his incredible work and credit for his 
+amazing color palettes of which I borrowed a few... thanks Jim!
 
 This project is designed to work in tandem with the [web-widgets](https://github.com/steven-lyles/web-widgets) project which will create elements of the interface.
 
 Here is a sample screenshot of the main layout:
 
-![LACARS Interface](https://www.stevenlyles.net/assets/graphics/lcars.png)
+![LACARS Interface](https://www.stevenlyles.net/assets/graphics/lcars.jpg)
 
