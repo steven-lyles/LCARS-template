@@ -10,6 +10,10 @@ amazing color palettes of which I borrowed a few... thanks Jim!
 
 This project is designed to work in tandem with the [web-widgets](https://github.com/steven-lyles/web-widgets) project which will create elements of the interface.
 
+The page consists of a main flex column container consisting of a header, content and footer. Each of these containers is 
+further populated with flex containers that are populated with various widgets or content. All parts, including the widgets, 
+are generated from JSON configurations. This includes any CSS.
+
 Here is a sample screenshot of the main layout:
 
 ![LACARS Interface](https://www.stevenlyles.net/assets/graphics/lcars.jpg)

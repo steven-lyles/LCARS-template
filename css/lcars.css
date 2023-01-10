@@ -13,7 +13,7 @@ body {
 
 .container-main {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     height: 100%;
 }
 .container-header {
@@ -116,7 +116,8 @@ body {
 .panel-logo a {
     display: block;
     height: 44px;
-    background: #E4DDD5;
+    /*background: #E4DDD5;*/
+    background: #E4E5DD;
     background-image: url("../assets/sample-logo.svg");
     background-size:     110px;
     background-repeat:   no-repeat;

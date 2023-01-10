@@ -1,10 +1,79 @@
+<!--
+ * ======================================================================================
+ * LCARS Template: Example
+ * Interface based on the graphics of LCARS from Star Trek:
+ * L.C.A.R.S - Library Computer Access & Retrieval System
+ * Copyright © Steven M. Lyles
+ * https://github.com/steven-lyles/LCARS-template
+ * https://www.stevenlyles.net
+ * =====================================================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>LCARS Example</title>
+  <link id="font-main" href='' rel='stylesheet'>
+  <link id="icon" rel="icon" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+      body {
+          height: 100%;
+          background: black;
+          color: #88bbff;
+          font: 400 22px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
+          margin-left: 5px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          overflow: hidden;
+      }
+      .container-main {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+      }
+      .container-header {
+          flex: 0 1 auto;
+          height: 280px;
+          margin-bottom: 5px;
+          margin-top: 5px;
+
+          border-style: solid;
+          border-width: 1px;
+          border-color: #2255ff;
+      }
+      .container-content {
+          flex: 1 1 auto;
+          margin-bottom: 5px;
+          height: 300px;
+
+          border-style: solid;
+          border-width: 1px;
+          border-color: #2255ff;
+      }
+      .container-footer {
+          flex: 0 1 100px;
+          margin-bottom: 15px;
+          overflow: hidden;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #2255ff;
+      }
+  </style>
 </head>
 <body>
-$END$
+
+<div id="container-main" class="container-main">
+
+  <div id="container-header" class="container-header"></div>
+  <div id="container-content" class="container-content"></div>
+  <div id="container-footer" class="container-footer"></div>
+
+</div> <!-- #container-main -->
+
+<script type="text/javascript" src="js/lcars.js"></script>
+<script>
+  let lcars = new Lcars("container-main", "../config/lcars.json");
+</script>
 </body>
 </html>

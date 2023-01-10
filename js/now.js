@@ -8,6 +8,8 @@
  */
 'use strict';
 
+
+
 //=======================================================================================
 // Creates a widget for displaying time and date based on the local machine
 class Now {
