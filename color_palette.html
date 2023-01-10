@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colors</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+        background-color: black;
+        margin: 20px;
+        color: #8bf;
+        font: 400 20px/1.5 "Roboto", sans-serif;
+    }
+    .swatch-container {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 20px;
+    }
+    .swatch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 170px;
+        height: 100px;
+        border-radius: 20px;
+        color: black;
+        font-size: 0.8em;
+        text-align: center;
+    }
+    .name { font-weight: bold; }
+  </style>
+</head>
+<body>
+<h3>LCARS Color Swatches</h3>
+<div id="swatch-container" class="swatch-container">
+</div>
+<script>
+    let json = $.getJSON({'url': './config/color_map.json', 'async': false});
+    let config = JSON.parse(json.responseText);
+    let colors = [];
+    let count = 0;
+    let fontColor = "black";
+
+    //===================================================================================
+    // Returns chrominance value of color based on the RGB values
+    function chrominance_from(rgb) {
+        let values = rgb.split(",");
+        let chroma = 128 +
+                     (112.0 * parseInt(values[0])) -
+                     (93.786 * parseInt(values[1])) -
+                     (18.214 * parseInt(values[2]));
+        return chroma;
+    }
+
+    //===================================================================================
+    // Sort the color list by hex value or chrominance from lowest to highest
+    function sort_colors_by(sortFactor) {
+        $.each(config, function(key, value) {
+           count += 1;
+           let colorValue = 0;
+           if (sortFactor == "hex") {
+               colorValue = parseInt(value.hex, 16);
+           }
+           if (sortFactor == "chrominance") {
+               colorValue = chrominance_from(value.rgb);
+           }
+           let swatch = { "name" : key, "value" : colorValue }
+           if (colors.length > 0) {
+              $.each(colors, function(index, entry) {
+                  let nextIndex = index + 1;
+                  let prevIndex = index - 1;
+                  if (swatch.value > entry.value) {
+                      if (nextIndex == colors.length) {
+                          colors.push(swatch);
+                          return false;
+                      } else if (swatch.value <= colors[nextIndex].value) {
+                          colors.splice(nextIndex, 0, swatch);
+                          return false;
+                      }
+                  } else if (swatch.value <= entry.value) {
+                      if (prevIndex < 0 ) {
+                          colors.splice(0, 0, swatch);
+                      } else {
+                          colors.splice(prevIndex, 0, swatch);
+                      }
+                      return false;
+                  }
+              });
+           } else {
+               colors.push(swatch);
+           }
+        });
+    }
+
+    //===================================================================================
+    function gen_swatches() {
+        $.each(colors, function(index, entry) {
+            let name = entry.name;
+            fontColor = (parseInt(config[name].hex, 16) > 8388607) ? "black" : "white";
+            let newSwatch = `<div class='swatch' style='background-color: #${config[name].hex}; color: ${fontColor}'>\n`;
+            newSwatch +=    `  <div class='name'>${name}</div>\n`;
+            newSwatch +=     `  <div class='hex'>${config[name].hex}</div>\n`;
+            newSwatch +=     `  <div class='rgb'>${config[name].rgb}</div>\n`;
+            newSwatch +=   `</div>\n`
+            $("#swatch-container").append(newSwatch);
+        });
+    }
+
+    sort_colors_by("chrominance");
+    gen_swatches();
+
+    //===================================================================================
+    $(document).ready(function() {
+        console.log(parseInt("ffffff", 16));
+    });
+</script>
+</body>
+</html>

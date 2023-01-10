@@ -1,0 +1,14 @@
+{
+    "ghost"        : { "hex" : "88bbff", "rgb" : "136,187,255"},
+    "evening"      : { "hex" : "2255ff", "rgb" : "34,85,255"}  ,
+    "martian"      : { "hex" : "99dd66", "rgb" : "153,221,102"},
+    "cloudwhite"   : { "hex" : "E4E5DD", "rgb" : "228,229,221"},
+    "parchment"    : { "hex" : "ffcc99", "rgb" : "255,204,153"},
+    "galaxy"       : { "hex" : "444a77", "rgb" : "68,74,119"}  ,
+    "periwinkle"   : { "hex" : "aaaaff", "rgb" : "170,170,255"},
+    "orange"       : { "hex" : "e67642", "rgb" : "230,118,66"} ,
+    "sunflower"    : { "hex" : "ffcc66", "rgb" : "255,204,102"},
+    "moonbeam"     : { "hex" : "ccdeff", "rgb" : "204,222,255"},
+    "tangerine"    : { "hex" : "ff8833", "rgb" : "255,136,51"} ,
+    "pumpkinshade" : { "hex" : "ff7744", "rgb" : "255,119,68"}
+}
