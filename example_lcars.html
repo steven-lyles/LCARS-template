@@ -50,9 +50,9 @@
           height: 300px;
 
           /* dev only remove */
-          border-style: solid;
-          border-width: 1px;
-          border-color: #2255ff;
+          /*border-style: solid;*/
+          /*border-width: 1px;*/
+          /*border-color: #2255ff;*/
       }
       .container-footer {
           flex: 0 1 100px;
@@ -84,6 +84,9 @@
           color: black;
 
       }
+      .container-frame-right {
+          flex: 1 1 auto;
+      }
       .container-frame-left-top {
           width: 160px;
           min-width: 160px;
@@ -91,19 +94,31 @@
           background: #2255ff;
           border-radius: 0 0 0 100px;
       }
-      .container-frame-right {
-          /*width: 100%;*/
-          height: 280px;
-          /*display: flex;*/
-          /*flex-direction: column;*/
-          flex: 1 1 auto;
-          /*align-items: flex-end;*/
-          /*justify-content: flex-start;*/
+      .container-frame-left-middle {
+          width: 160px;
+          height: 300px;
+          min-width: 160px;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
 
-          /*background-color: pink;*/
           /*border-style: solid;*/
           /*border-width: 1px;*/
-          /*border-color: red;*/
+          /*border-color: #2255ff;*/
+      }
+      .container-frame-right {
+          height: 280px;
+          flex: 1 1 auto;
+      }
+      .panel-home {
+          height: 100px;
+          width: 160px;
+          align-self: flex-start;
+          /*padding: 0px 10px 15px 0px;*/
+          background: #25f;
+          border-radius: 100px 0 0 0;
+          /*border-radius: 0 0 5px 5px;*/
+          position: relative;
       }
       .banner {
           font: 400 40px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
@@ -143,9 +158,20 @@
           background: black;
           border-radius: 0 0 0 40px;
       }
+      .corner-bg {
+          width: 50px;
+          height: 40px;
+          background: #25f;
+      }
+      .corner {
+          width: 50px;
+          height: 40px;
+          background: #000;
+          border-radius: 40px 0 0 0;
+      }
       .bar-panel {
           display: flex;
-          height: 15px;
+          height: 10px;
       }
       .bar-1,
       .bar-2,
@@ -157,7 +183,7 @@
       .bar-9,
       .bar-10,
       .bar-11 {
-          height: 15px;
+          height: 10px;
       }
       .bar-1,
       .bar-2,
@@ -181,19 +207,46 @@
       }
       .bar-2 {
           width: 40px;
-          background: #fc9;
+          background: #ffcc99;
       }
       .bar-3 {
           width: 200px;
-          background: #58f;
+          background: #5588ff;
       }
       .bar-4 {
           flex: 1;
-          background: #11e;
+          background: #1111ee;
       }
       .bar-5 {
           width: 50px;
           background: #444a77;
+      }
+      .bar-6 {
+          flex: 1;
+          width: 320px;
+          background: #2255ff;
+      }
+      .bar-7 {
+          width: 40px;
+          /*background: #f83;*/
+          background-color: #99dd66;
+      }
+      .bar-8 {
+          width: 200px;
+          height: 5px;
+          background: #ccdeff;
+      }
+      .bar-9 {
+          flex: 1;
+          background: #25f;
+      }
+      .bar-10 {
+          width: 50px;
+          background: #444a77;
+      }
+      .bar-11 {
+          width: 40px;
+          background: #f83;
       }
   </style>
 </head>
@@ -235,6 +288,29 @@
   </div> <!-- #container-header -->
 
   <div id="container-content" class="container-content">
+
+    <div class="container-frames">
+      <div class="container-frame-left-middle">
+        <div class="panel-home">
+<!--          <div id="button-home" class="button-content-container">-->
+<!--            <span id="menu-home-txt" class="menu-text">HOME</span>-->
+<!--            <img id="menu-home-icon" class="menu-icon" src="./assets/home.svg" alt="HOME"/>-->
+<!--          </div>-->
+        </div>
+      </div>
+      <div class="container-frame-right">
+        <div class="bar-panel">
+          <div class="bar-6"></div>
+          <div class="bar-7"></div>
+          <div class="bar-8"></div>
+          <div class="bar-9"></div>
+          <div class="bar-10"></div>
+        </div>
+        <div class="corner-bg">
+          <div class="corner"></div>
+        </div>
+      </div>
+    </div>
 
   </div> <!-- #container-content -->
 
