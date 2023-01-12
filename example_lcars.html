@@ -15,13 +15,14 @@
   <title>LCARS Example</title>
   <link id="font-main" href='' rel='stylesheet'>
   <link id="icon" rel="icon" href="">
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <style>
       body {
           height: 100%;
           background: black;
-          color: #88bbff;
-          font: 400 22px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
+          color: #88bbff; // ghost
+          font: 400 20px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
           margin-left: 5px;
           margin-right: 10px;
           margin-bottom: 10px;
@@ -38,15 +39,17 @@
           margin-bottom: 5px;
           margin-top: 5px;
 
-          border-style: solid;
-          border-width: 1px;
-          border-color: #2255ff;
+          /* dev only remove */
+          /*border-style: solid;*/
+          /*border-width: 1px;*/
+          /*border-color: #2255ff;*/
       }
       .container-content {
           flex: 1 1 auto;
           margin-bottom: 5px;
           height: 300px;
 
+          /* dev only remove */
           border-style: solid;
           border-width: 1px;
           border-color: #2255ff;
@@ -55,25 +58,223 @@
           flex: 0 1 100px;
           margin-bottom: 15px;
           overflow: hidden;
+
+          /* dev only remove */
           border-style: solid;
           border-width: 1px;
           border-color: #2255ff;
       }
+      .container-frames {
+          display: flex;
+          height: 100%;
+          flex-direction: row;
+          margin: 0 auto;
+          overflow: hidden;
+      }
+      container-frame-left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          /*flex: 0 1 auto;*/
+          /*min-width: 180px;*/
+          text-align: center;
+          font-size: 19px;
+          font-weight: 700;
+          color: black;
+
+      }
+      .container-frame-left-top {
+          width: 160px;
+          min-width: 160px;
+          height: 280px;
+          background: #2255ff;
+          border-radius: 0 0 0 100px;
+      }
+      .container-frame-right {
+          /*width: 100%;*/
+          height: 280px;
+          /*display: flex;*/
+          /*flex-direction: column;*/
+          flex: 1 1 auto;
+          /*align-items: flex-end;*/
+          /*justify-content: flex-start;*/
+
+          /*background-color: pink;*/
+          /*border-style: solid;*/
+          /*border-width: 1px;*/
+          /*border-color: red;*/
+      }
+      .banner {
+          font: 400 40px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
+          height: 60px;
+          text-align: right;
+          text-transform: uppercase;
+          line-height: 1.1;
+          font-weight: 350;
+          color: #88bbff;
+          padding: 15px 10px 0px 15px;
+      }
+      .container-marquee {
+          width: 99%;
+          height: 155px;
+          margin-left: 10px;
+          background-color: #251e1a; /* obsidian; change this to black when widget added */
+          border-radius: 10px 10px 10px 10px;
+
+          /*display: flex;*/
+          /*flex-direction: row;*/
+          /*align-items: center;*/
+          /*justify-content: right;*/
+          /*flex-wrap: wrap;*/
+      }
+      .top-corner-bg {
+          width: 40px;
+          height: 40px;
+          background: #2255ff;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: flex-end;
+      }
+      .top-corner {
+          width: 40px;
+          height: 40px;
+          background: black;
+          border-radius: 0 0 0 40px;
+      }
+      .bar-panel {
+          display: flex;
+          height: 15px;
+      }
+      .bar-1,
+      .bar-2,
+      .bar-3,
+      .bar-4,
+      .bar-5,
+      .bar-6,
+      .bar-7,
+      .bar-9,
+      .bar-10,
+      .bar-11 {
+          height: 15px;
+      }
+      .bar-1,
+      .bar-2,
+      .bar-3,
+      .bar-4,
+      .bar-6,
+      .bar-7,
+      .bar-8,
+      .bar-9,
+      .bar-11{
+          border-right: 5px solid #000;
+      }
+      .bar-1,
+      .bar-6 {
+          transition: width 1s;
+      }
+      .bar-1 {
+          flex: 1;
+          width: 320px;
+          background: #25f;
+      }
+      .bar-2 {
+          width: 40px;
+          background: #fc9;
+      }
+      .bar-3 {
+          width: 200px;
+          background: #58f;
+      }
+      .bar-4 {
+          flex: 1;
+          background: #11e;
+      }
+      .bar-5 {
+          width: 50px;
+          background: #444a77;
+      }
   </style>
 </head>
 <body>
-
+<!-- The main container for the page -->
 <div id="container-main" class="container-main">
 
-  <div id="container-header" class="container-header"></div>
-  <div id="container-content" class="container-content"></div>
+  <!-- The header container for the page -->
+  <div id="container-header" class="container-header">
+
+    <div class="container-frames">
+
+      <div id="panel-logo-time" class="container-frame-left container-frame-left-top">
+        <!-- Logo widget will be added here -->
+        <!-- Now widget will be added here -->
+      </div>
+
+      <div class="container-frame-right">
+        <div class="banner">
+          <span id="title-main"></span> &#149; <span id="title-secondary"></span>
+        </div>
+        <div class="container-marquee">
+          <!-- Marquee widget added here... -->
+        </div>
+        <div class="top-corner-bg">
+          <div class="top-corner"></div>
+        </div>
+        <div class="bar-panel">
+          <div class="bar-1"></div>
+          <div class="bar-2"></div>
+          <div class="bar-3"></div>
+          <div class="bar-4"></div>
+          <div class="bar-5"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div> <!-- #container-header -->
+
+  <div id="container-content" class="container-content">
+
+  </div> <!-- #container-content -->
+
   <div id="container-footer" class="container-footer"></div>
 
 </div> <!-- #container-main -->
 
-<script type="text/javascript" src="js/lcars.js"></script>
+<!--<script type="text/javascript" src="js/lcars.js"></script>-->
+<script type="text/javascript" src="./js/logo.js"></script>
+<script type="text/javascript" src="./js/now.js"></script>
 <script>
-  let lcars = new Lcars("container-main", "../config/lcars.json");
+  // let lcars = new Lcars("container-main", "../config/lcars.json");
+
+  let logo_config = {
+      "height"           : "120px",                     // widget height
+      "width"            : "100%",                       // % of container or pixel value (e.g. 100px)
+      "logo_image"       : "../assets/sample-logo.svg", // logo image
+      "logo_size"        : "80%",                       // logo size as percentage of height
+      "background_color" : "#5E7279",                   // dusk
+      "url"              : "https://stevenlyles.net",   // what to open when clicked
+      "spacer_size"      : 5,                           // px border at bottom
+      "spacer_color"     : "black"                      // border at bottom color
+  }
+  let logo_widget = new Logo("panel-logo-time", logo_config);
+
+  let now_config = {
+      "font_size"        : "26",      // px
+      "font_color"       : "black",
+      "background_color" : "#2255ff", // evening
+      "width"            : "100%",    // % of container or pixel value (e.g. 100px)
+      "border_radius"    : "20"       // curved corners in pixels (0 for square)
+  }
+  let now_widget = new Now("panel-logo-time", now_config);
+
+  //========================================================================================
+  $(document).ready(function() {
+       $("#title-main").text("LCARS");
+       $("#title-secondary").text("ONLINE");
+  });
+
 </script>
 </body>
 </html>

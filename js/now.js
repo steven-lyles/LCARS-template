@@ -8,45 +8,35 @@
  */
 'use strict';
 
-
-
 //=======================================================================================
 // Creates a widget for displaying time and date based on the local machine
 class Now {
     constructor(container_id, config) {
         this.config = config;
         this.id = container_id;
-        this.set_container_css();
+
         this.gen_widget();
         this.gen_css();
     }
 
     //===================================================================================
-    // Set the css styling for the parent container (id from construction)
-    set_container_css() {
-        $(`#${this.id}`).css("font", `400 ${this.config.font_size}px/1.5 "Roboto", sans-serif`);
-        $(`#${this.id}`).css("background-color", this.config.background_color);
-        $(`#${this.id}`).css("color", this.config.font_color);
-        $(`#${this.id}`).css("padding", "5px 0px 0px 0px");
-        $(`#${this.id}`).css("margin", "0px 0px 0px 15px");
-        $(`#${this.id}`).css("width", `${Math.floor(this.config.font_size*8)}px`);
-    }
-
-    //===================================================================================
     gen_css() {
-        $(".time-panel").css("margin", "auto");
-        $(".time-panel").css("font-size", "1.7em");
-        $(".time-panel").css("text-align", "center");
+        $("#time-panel").css("font", `400 ${this.config.font_size}px/1.5 "Roboto", sans-serif`);
+        $("#time-panel").css("background-color", this.config.background_color);
+        $("#time-panel").css("color", this.config.font_color);
+        $("#time-panel").css("padding", "10px 0px 10px 0px");
+        $("#time-panel").css("width", this.config.width);
+        $("#time-panel").css("height", "auto");
+        $("#time-panel").css("text-align", "center");
+        $("#time-panel").css("border-radius", `${this.config.border_radius}px`);
 
-        $(".time-info").css("font-size", "0.3em");
-        $(".time-info").css("display", "inline-block");
+        $("#time-info").css("font-size", "0.3em");
+        $("#time-info").css("display", "inline-block");
+        $("#time-info").css("margin-left", "5px");
 
-
-        $("#date").css("font-size", "0.8em");
+        $("#date").css("font-size", "0.45em");
         $("#date").css("margin", "auto");
         $("#date").css("text-align", "center");
-
-        $("#time").css("margin-right", "5px");
     }
 
     //===================================================================================
@@ -54,11 +44,11 @@ class Now {
         $("#" + this.id).append("<div id='time-panel' class='time-panel'></div>");
 
         $("#time-panel").append("<span id='time'></span>");
-        $("#time-panel").append("<div id='time-info' class='time-info'>");
+        $("#time-panel").append("<div id='time-info' class='time-info'></div>");
         $("#time-info").append("<div id='ampm'></div>");
         let zone = this.get_time_zone_acronym();
         $("#time-info").append(`<div id='zone'>${zone}</div>`);
-        $("#" + this.id).append("<div id='date'></div>");
+        $("#time-panel").append("<div id='date'></div>");
     }
 
     //========================================================================================
