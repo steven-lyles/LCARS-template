@@ -31,5 +31,6 @@
     "calm"         : { "hex" : "87bbda", "rgb" : "135,187,218"},
     "go"           : { "hex" : "00bb00", "rgb" : "0,187,0"},
     "deepwoods"    : { "hex" : "27322c", "rgb" : "39,50,44"},
-    "parrishblue"  : { "hex" : "0047AB", "rgb" : "0,71,171" }
+    "parrishblue"  : { "hex" : "0047AB", "rgb" : "0,71,171" },
+    "cool"         : { "hex" : "5588ff", "rgb" : "85,136,255" }
 }
