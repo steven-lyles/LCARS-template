@@ -88,18 +88,18 @@
           min-width: 50%;
       }
       .container-frame-left-top {
-          width: 160px;
-          min-width: 160px;
+          width: 180px;
+          min-width: 180px;
           height: 280px;
           background: #2255ff;
-          border-radius: 0 0 0 60px;
+          border-radius: 0 0 0 90px;
       }
       .container-frame-left-middle {
           display: flex;
           flex-direction: column;
-          width: 160px;
+          width: 180px;
           height: 100%;
-          min-width: 160px;
+          min-width: 180px;
 
           /*align-items: center;*/
           /*justify-content: flex-start;*/
@@ -110,10 +110,10 @@
       }
       .container-frame-left-bottom {
           height: 100px;
-          width: 160px;
-          min-width: 160px;
+          width: 180px;
+          min-width: 180px;
           background: #2255ff;
-          border-radius: 0 0 0 60px;
+          border-radius: 0 0 0 90px;
       }
       .container-frame-right {
           height: 280px;
@@ -122,11 +122,11 @@
       }
       .panel-home {
           height: 100px;
-          width: 160px;
+          width: 180px;
           align-self: flex-start;
           /*padding: 0px 10px 15px 0px;*/
           background: #25f;
-          border-radius: 60px 0 0 0;
+          border-radius: 90px 0 0 0;
           /*border-radius: 0 0 5px 5px;*/
           position: relative;
           display: flex;
@@ -136,7 +136,7 @@
       }
       .panel-buttons {
           background-color: #251e1a;
-          width: 160px;
+          width: 180px;
           height: auto;
       }
       .banner {
@@ -164,7 +164,7 @@
       }
       .top-corner-bg {
           width: 40px;
-          height: 48px;
+          height: 44px;
           background: #2255ff;
           display: flex;
           flex-direction: row;
@@ -173,7 +173,7 @@
       }
       .top-corner {
           width: 40px;
-          height: 48px;
+          height: 44px;
           background: black;
           border-radius: 0 0 0 40px;
       }
@@ -190,7 +190,7 @@
       }
       .button-content-container {
           font: 400 22px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
-          width: 160px;
+          width: 180px;
           height: 50px;
           /*background-color: deeppink;*/
           position: absolute;
@@ -219,7 +219,7 @@
       }
       .panel-spacer {
           background-color: #2255ff;
-          width: 160px;
+          width: 180px;
           height: auto;
           flex: 1 1 auto;
       }
@@ -340,10 +340,10 @@
   let color = JSON.parse(json.responseText);
 
   let logo_config = {
-      "height"           : "120px",                     // widget height
+      "height"           : "130px",                     // widget height
       "width"            : "100%",                       // % of container or pixel value (e.g. 100px)
       "logo_image"       : "../assets/sample-logo.svg", // logo image
-      "logo_size"        : "80%",                       // logo size as percentage of height
+      "logo_size"        : "85%",                       // logo size as percentage of height
       "background_color" : "#5E7279",                   // dusk
       "url"              : "https://stevenlyles.net",   // what to open when clicked
       "spacer_size"      : 5,                           // px border at bottom
@@ -356,12 +356,12 @@
       "font_color"       : "black",
       "background_color" : "#2255ff", // evening
       "width"            : "100%",    // % of container or pixel value (e.g. 100px)
-      "border_radius"    : "20"       // curved corners in pixels (0 for square)
+      "border_radius"    : "22"       // curved corners in pixels (0 for square)
   }
   let now_widget = new Now("panel-logo-time", now_config);
 
   let horz_divider_header_config = {
-      "height"    : 10,        // in pixels; vertical height of divider bars
+      "height"    : 14,        // in pixels; vertical height of divider bars
       "gap_size"  : 5,         // in pixels; size of gap between bars (always on right)
       "gap_color" : "black",   // color of gap between bars; should match page background
       "bars" : [
@@ -400,7 +400,7 @@
   let horz_divider_header = new HorizontalBarsDivider("horz_divider_header", horz_divider_header_config);
 
   let horz_divider_content_top_config = {
-      "height"    : 10,        // in pixels; vertical height of divider bars
+      "height"    : 14,        // in pixels; vertical height of divider bars
       "gap_size"  : 5,         // in pixels; size of gap between bars (always on right)
       "gap_color" : "black",   // color of gap between bars; should match page background
       "bars" : [
@@ -439,7 +439,7 @@
   let horz_divider_content_top = new HorizontalBarsDivider("horz_divider_content_top", horz_divider_content_top_config);
 
   let horz_divider_footer_config = {
-      "height"    : 10,        // in pixels; vertical height of divider bars
+      "height"    : 14,        // in pixels; vertical height of divider bars
       "gap_size"  : 5,         // in pixels; size of gap between bars (always on right)
       "gap_color" : "black",   // color of gap between bars; should match page background
       "bars" : [

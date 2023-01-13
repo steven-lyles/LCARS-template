@@ -24,7 +24,7 @@ class Now {
         $("#time-panel").css("font", `400 ${this.config.font_size}px/1.5 "Roboto", sans-serif`);
         $("#time-panel").css("background-color", this.config.background_color);
         $("#time-panel").css("color", this.config.font_color);
-        $("#time-panel").css("padding", "10px 0px 10px 0px");
+        $("#time-panel").css("padding", "10px 0px 5px 0px");
         $("#time-panel").css("width", this.config.width);
         $("#time-panel").css("height", "auto");
         $("#time-panel").css("text-align", "center");
