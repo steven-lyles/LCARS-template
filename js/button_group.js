@@ -16,16 +16,13 @@ let button_group_color = JSON.parse(button_group_json.responseText);
 //=======================================================================================
 // Creates a widget for displaying a wrapping group array of buttons with actions
 class ButtonGroup {
-    constructor(container_id, config) {
+    constructor(container_id, config, callback) {
         this.config = config;
         global_config = config;
         this.id = container_id;
         this.widget_id = this.gen_unique_id_from(container_id);
         global_id = this.widget_id;
-
-        // Load the color map
-        // let tmp_json = $.getJSON({'url': "../config/color_map.json", 'async': false});
-        // this.color = JSON.parse(tmp_json.responseText);
+        global_config["callback"] = callback;
 
         this.gen_widget();
         this.gen_css();
@@ -67,7 +64,7 @@ class ButtonGroup {
         let inactive_color = button_group_color[this.config.inactive_color].hex;
 
         $.each(this.config.buttons, function(index, button) {
-            if (button.default) {
+            if (index == global_config.selected_index) {
                 $(`#button-group-${index}-${global_id}`).css("background-color", `#${active_color}`);
                 $(`#button-group-${index}-${global_id}`).css("font-weight", "bold");
             } else {
@@ -93,6 +90,31 @@ class ButtonGroup {
         });
     }
 
+    activate_button(index) {
+        if (!this.config.buttons[index].active) {
+            let button_id = `#button-group-${index}-${this.widget_id}`;
+            this.config.buttons[index].active = true;
+            console.log();
+            $(button_id).css("background-color", `#${button_group_color[this.config.background_color].hex}`);
+            $(button_id).css("box-shadow", `0px 0px 0px 3px #${button_group_color[this.config.background_color].hex} inset`);
+            $(button_id).css("color", `#${button_group_color[this.config.font_color].hex} `);
+        }
+    }
+
+    deactivate_button(index) {
+        if (this.config.buttons[index].active) {
+            let button_id = `#button-group-${index}-${this.widget_id}`;
+            if (this.config.selected_index == index) {
+                alert(`${this.config.buttons[index].txt} is active!\nUnable to deactivate a selected button.\nPlease select another choice before deactivating`);
+            } else {
+                this.config.buttons[index].active = false;
+                $(button_id).css("background-color", `#${button_group_color[this.config.inactive_color].hex}`);
+                $(button_id).css("box-shadow", `0px 0px 0px 3px #${button_group_color[this.config.inactive_color].hex} inset`);
+                $(button_id).css("color", `#${button_group_color["battleship"].hex}`);
+            }
+        }
+    }
+
 } /* class Now */
 
 //=======================================================================================
@@ -108,7 +130,7 @@ $(document).ready(function() {
     }, function() {
         $(`#${this.id}`).css("cursor", "default");
         let index = parseInt(this.id.split("-")[2]);
-        if (global_config.buttons[index].default) {
+        if (global_config.selected_index == index) {
             $(`#${this.id}`).css("background-color", `#${button_group_color[global_config.active_color].hex}`);
             $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px #${color[global_config.active_color].hex} inset`);
         } else if (!global_config.buttons[index].active) {
@@ -118,5 +140,25 @@ $(document).ready(function() {
             $(`#${this.id}`).css("background-color", `#${button_group_color[global_config.background_color].hex}`);
             $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px #${color[global_config.background_color].hex} inset`);
         }
+    });
+
+    //------------------------------------
+    // Handle callback when button clicked
+    $(`.button-group-${global_id}`).click( function() {
+        let index = parseInt(`${this.id}`.split("-")[2]);
+        if (global_config.buttons[index].active) {
+            let old_selected_button_id = `#button-group-${global_config.selected_index}-${global_id}`
+            $(old_selected_button_id).css("background-color", `#${button_group_color[global_config.background_color].hex}`);
+            $(old_selected_button_id).css("box-shadow", `0px 0px 0px 3px #${color[global_config.background_color].hex} inset`);
+            $(old_selected_button_id).css("font-weight", "normal");
+            global_config.selected_index = index;
+            $(`#${this.id}`).css("background-color", `#${button_group_color[global_config.active_color].hex}`);
+            $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px #${color[global_config.active_color].hex} inset`);
+            $(`#${this.id}`).css("font-weight", "bold");
+            global_config.callback.apply(this, [index]);
+        } else {
+            console.log(`${global_config.buttons[index].txt} is not active.`);
+        }
+
     });
 });

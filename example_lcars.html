@@ -488,23 +488,24 @@
       "hover_outline" : "yellow",
       "active_color" :  "martian",
       "inactive_color" : "galaxy",
+      "selected_index" : 0,
       "buttons" : [
-          { "txt": "Snoopy", "active" : true, "default": true },
-          { "txt": "Woodstock", "active" : true, "default": false },
-          { "txt": "Linus", "active" : true, "default": false },
-          { "txt": "Charlie Brown", "active" : false, "default": false },
-          { "txt": "Sally", "active" : true, "default": false },
-          { "txt": "Lucy", "active" : true, "default": false }
+          { "txt": "Snoopy",        "active" : true },
+          { "txt": "Woodstock",     "active" : true },
+          { "txt": "Linus",         "active" : true },
+          { "txt": "Charlie Brown", "active" : false },
+          { "txt": "Sally",         "active" : true },
+          { "txt": "Lucy",          "active" : true }
       ]
   }
-  let button_group_marquee = new ButtonGroup("container-marquee", button_group_marquee_config);
+  let button_group_marquee = new ButtonGroup("container-marquee", button_group_marquee_config, marquee_button_callback);
 
   function clickHomeCallback() {
       console.log("Home button clicked");
   }
 
   function marquee_button_callback(index) {
-      console.log(`${button_group_config.buttons[index]} button clicked`);
+      console.log(`${button_group_marquee_config.buttons[index].txt} button clicked`);
   }
 
   //========================================================================================
@@ -519,6 +520,7 @@
           $("#menu-home-txt").css("color", "black");
           $("#menu-home-icon").attr("src","./assets/home.svg");
       });
+
   });
 
 </script>
