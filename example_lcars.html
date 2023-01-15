@@ -124,10 +124,8 @@
           height: 100px;
           width: 180px;
           align-self: flex-start;
-          /*padding: 0px 10px 15px 0px;*/
           background: #25f;
           border-radius: 90px 0 0 0;
-          /*border-radius: 0 0 5px 5px;*/
           position: relative;
           display: flex;
           flex-direction: column;
@@ -141,6 +139,7 @@
       }
       .banner {
           font: 400 40px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
+          font-size: 2.8em;
           height: 60px;
           text-align: right;
           text-transform: uppercase;
@@ -153,14 +152,14 @@
           width: 99%;
           height: 148px;
           margin-left: 10px;
-          background-color: #251e1a; /* obsidian; change this to black when widget added */
+          background-color: black;
           border-radius: 10px 10px 10px 10px;
 
           display: flex;
           flex-direction: row;
           align-items: center;
           justify-content: right;
-          /*flex-wrap: wrap;*/
+          flex-wrap: wrap;
       }
       .top-corner-bg {
           width: 40px;
@@ -260,8 +259,7 @@
         <div class="banner">
           <span id="title-main"></span> &#149; <span id="title-secondary"></span>
         </div>
-        <div class="container-marquee">
-          <div class="temp_msg">This area reserved for marquee content...</div>
+        <div id="container-marquee" class="container-marquee">
           <!-- Marquee widget added here... -->
         </div>
         <div class="top-corner-bg">
@@ -331,7 +329,8 @@
 <!--<script type="text/javascript" src="js/lcars.js"></script>-->
 <script type="text/javascript" src="./js/logo.js"></script>
 <script type="text/javascript" src="./js/now.js"></script>
-<script type="text/javascript" src="js/horz_bars_divider.js"></script>
+<script type="text/javascript" src="./js/horz_bars_divider.js"></script>
+<script type="text/javascript" src="./js/button_group.js"></script>
 <script>
   // let lcars = new Lcars("container-main", "../config/lcars.json");
 
@@ -477,8 +476,35 @@
   }
   let horz_divider_footer = new HorizontalBarsDivider("horz_divider_footer", horz_divider_footer_config);
 
+  let button_group_marquee_config = {
+      "font" : "400 20px/1.5 \"Antonio\", \"Arial Narrow\", \"Avenir Next Condensed\", sans-serif",
+      "font-size" : "1.2em",
+      "font_color" : "black",
+      "background_color" : "parchment",
+      "width" : "150px",
+      "height": "50px",
+      "border_radius": "40px",
+      "hover_color" : "martian",
+      "hover_outline" : "yellow",
+      "active_color" :  "martian",
+      "inactive_color" : "galaxy",
+      "buttons" : [
+          { "txt": "Snoopy", "active" : true, "default": true },
+          { "txt": "Woodstock", "active" : true, "default": false },
+          { "txt": "Linus", "active" : true, "default": false },
+          { "txt": "Charlie Brown", "active" : false, "default": false },
+          { "txt": "Sally", "active" : true, "default": false },
+          { "txt": "Lucy", "active" : true, "default": false }
+      ]
+  }
+  let button_group_marquee = new ButtonGroup("container-marquee", button_group_marquee_config);
+
   function clickHomeCallback() {
       console.log("Home button clicked");
+  }
+
+  function marquee_button_callback(index) {
+      console.log(`${button_group_config.buttons[index]} button clicked`);
   }
 
   //========================================================================================
