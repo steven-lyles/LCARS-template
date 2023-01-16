@@ -16,5 +16,5 @@ are generated from JSON configurations. This includes any CSS.
 
 This project is a work in progress, but you can view a live demo of the latest progress at:
 
-![LCARS Themplate](https://www.stevenlyles.net/playground/lcars/example_lcars.html)
+[LCARS Template](https://www.stevenlyles.net/playground/lcars/example_lcars.html)
 
