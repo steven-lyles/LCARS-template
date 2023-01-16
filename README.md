@@ -14,7 +14,7 @@ The page consists of a main flex column container consisting of a header, conten
 further populated with flex containers that are populated with various widgets or content. All parts, including the widgets, 
 are generated from JSON configurations. This includes any CSS.
 
-Here is a sample screenshot of the main layout:
+This project is a work in progress, but you can view a live demo of the latest progress at:
 
-![LACARS Interface](https://www.stevenlyles.net/assets/graphics/lcars.jpg)
+![LCARS Themplate](https://www.stevenlyles.net/playground/lcars/example_lcars.html)
 

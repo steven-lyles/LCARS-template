@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <title>LCARS Example</title>
   <link id="font-main" href='' rel='stylesheet'>
-  <link id="icon" rel="icon" href="">
+  <link rel="icon" href="https://stevenlyles.net/assets/graphics/true-north.png">
   <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <style>
@@ -335,7 +335,7 @@
   let logo_config = {
       "height"           : "130px",                     // widget height
       "width"            : "100%",                       // % of container or pixel value (e.g. 100px)
-      "logo_image"       : "../assets/sample-logo.svg", // logo image
+      "logo_image"       : "./assets/sample-logo.svg", // logo image
       "logo_size"        : "85%",                       // logo size as percentage of height
       "background_color" : "#5E7279",                   // dusk
       "url"              : "https://stevenlyles.net",   // what to open when clicked
@@ -390,7 +390,7 @@
           }
       ]
   }
-  let horz_divider_header = new HorizontalBarsDivider("horz_divider_header", horz_divider_header_config);
+  let horz_divider_header = new HorizontalBarsDivider("horz_divider_header", horz_divider_header_config, color);
 
   let horz_divider_content_top_config = {
       "height"    : 14,        // in pixels; vertical height of divider bars
@@ -429,7 +429,7 @@
           }
       ]
   }
-  let horz_divider_content_top = new HorizontalBarsDivider("horz_divider_content_top", horz_divider_content_top_config);
+  let horz_divider_content_top = new HorizontalBarsDivider("horz_divider_content_top", horz_divider_content_top_config, color);
 
   let horz_divider_footer_config = {
       "height"    : 14,        // in pixels; vertical height of divider bars
@@ -468,7 +468,7 @@
           }
       ]
   }
-  let horz_divider_footer = new HorizontalBarsDivider("horz_divider_footer", horz_divider_footer_config);
+  let horz_divider_footer = new HorizontalBarsDivider("horz_divider_footer", horz_divider_footer_config, color);
 
   let button_group_marquee_config = {
       "font" : "400 20px/1.5 \"Antonio\", \"Arial Narrow\", \"Avenir Next Condensed\", sans-serif",
@@ -492,7 +492,7 @@
           { "txt": "Lucy",          "active" : true }
       ]
   }
-  let button_group_marquee = new ButtonGroup("container-marquee", button_group_marquee_config, marquee_button_callback);
+  let button_group_marquee = new ButtonGroup("container-marquee", button_group_marquee_config, color, marquee_button_callback);
 
   function clickHomeCallback() {
       console.log("Home button clicked");
