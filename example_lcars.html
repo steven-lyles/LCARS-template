@@ -28,7 +28,12 @@
           margin-bottom: 10px;
           overflow: hidden;
       }
-      .temp_msg { text-align: center; padding-right: 10px; font: 400 16px/1.5  "Avenir Next Condensed", sans-serif; }
+      .temp-msg {
+          text-align: center;
+          padding-right: 10px;
+          padding-left: 20px;
+          font: 400 14px/1.5  "Avenir Next Condensed", sans-serif;
+      }
       .container-main {
           display: flex;
           flex-direction: column;
@@ -223,6 +228,50 @@
           /*border-color: #2d2d2d;*/
       }
 
+
+
+      .subject-bar {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: left;
+
+          margin-left: 20px;
+          height: 40px;
+      }
+      .container-subject-menu-buttons {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: left;
+
+          /* Dev only... remove for final */
+          background-color: #2d2d2d;
+          width: 500px;
+          height: 40px;
+      }
+      .subject-bar-spacer {
+          flex: 1 1 auto;
+          margin-right: 15px;
+      }
+      .subject-title-container {
+          height: 40px;
+          /*margin-left: 30px;*/
+
+          /*background: #355E3B;*/
+          padding-right: 20px;
+          /*padding-bottom: 20px;*/
+          position: relative;
+      }
+      .subject-title {
+          font: 400 65px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
+          font-weight: lighter;
+          /*overflow-y: visible;*/
+          position: absolute;
+          bottom: -15px;
+          right: 20px;
+      }
+
   </style>
 </head>
 <body>
@@ -284,6 +333,19 @@
         <div class="corner-bg">
           <div class="corner"></div>
         </div>
+
+        <div id="subject-bar" class="subject-bar">
+          <div class="container-subject-menu-buttons">
+            <div class="temp-msg">Reserved for subject buttons &#8594;</div>
+          </div>
+          <div class="subject-bar-spacer"></div>
+          <div id="subject-title-container" class="subject-title-container">
+            <div id="subject-title" class="subject-title">WELCOME</div>
+          </div>
+        </div>
+
+
+
       </div>
     </div>
 
@@ -295,7 +357,7 @@
       </div>
       <div class="container-frame-right">
         <div class="footer-spacer">
-
+          <div class="temp-msg">&#8592; Reserved for page footer</div>
         </div>
         <div class="top-corner-bg">
           <div class="top-corner"></div>
@@ -514,6 +576,7 @@
   //========================================================================================
   function button_page_selection_callback(index) {
       console.log(`${button_stack_config.button[index].txt} button clicked`);
+      $("#subject-title").text(button_stack_config.button[index].txt);
   }
   let button_stack = new ButtonStack("panel-buttons", button_stack_config, color, button_page_selection_callback);
 
@@ -528,6 +591,10 @@
       }, function(){
           $("#menu-home-txt").css("color", "black");
           $("#menu-home-icon").attr("src","./assets/home.svg");
+      });
+
+      $("#button-home").click( function() {
+          $("#subject-title").text("WELCOME");
       });
 
   });
