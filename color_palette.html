@@ -60,7 +60,8 @@
            count += 1;
            let colorValue = 0;
            if (sortFactor == "hex") {
-               colorValue = parseInt(value.hex, 16);
+               let hex_value = value.hex.slice(1);
+               colorValue = parseInt(hex_value, 16);
            }
            if (sortFactor == "chrominance") {
                colorValue = chrominance_from(value.rgb);
@@ -97,8 +98,9 @@
     function gen_swatches() {
         $.each(colors, function(index, entry) {
             let name = entry.name;
-            fontColor = (parseInt(config[name].hex, 16) > 8388607) ? "black" : "white";
-            let newSwatch = `<div class='swatch' style='background-color: #${config[name].hex}; color: ${fontColor}'>\n`;
+            let hex_value = config[name].hex.slice(1);
+            fontColor = (parseInt(hex_value, 16) > 8388607) ? "black" : "white";
+            let newSwatch = `<div class='swatch' style='background-color: ${config[name].hex}; color: ${fontColor}'>\n`;
             newSwatch +=    `  <div class='name'>${name}</div>\n`;
             newSwatch +=     `  <div class='hex'>${config[name].hex}</div>\n`;
             newSwatch +=     `  <div class='rgb'>${config[name].rgb}</div>\n`;

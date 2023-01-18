@@ -47,6 +47,10 @@ class HorizontalBarsDivider {
         $(`#${this.id}`).css("display", "flex");
         $(`#${this.id}`).css("height", this.config.height);
 
+        $(".bar-half").css("display", "flex");
+        $(".bar-half").css("flex-direction", "row");
+        $(".bar-half").css("justify-content", "flex-start");
+
         $.each(this.config.bars, function(index, bar) {
 
             if (bar.flex) {
@@ -55,10 +59,14 @@ class HorizontalBarsDivider {
             }
             if (bar.half) {
                 $(`#bar-${id}-${index}`).css("height", `${local_config.height/2}px`);
+                if (bar.location == "bottom") {
+                    $(`#bar-${id}-${index}`).css("align-self", "flex-end"); // over-ride default of top (flex-start)
+                }
+
             }
             $(`#bar-${id}-${index}`).css("width", bar.width);
-            $(`#bar-${id}-${index}`).css("background", `#${local_color[bar.color].hex}`);
-            $(`#bar-${id}-${index}`).css("border-right", `${local_config.gap_size}px solid #${local_color[local_config.gap_color].hex}`);
+            $(`#bar-${id}-${index}`).css("background", `${local_color[bar.color].hex}`);
+            $(`#bar-${id}-${index}`).css("border-right", `${local_config.gap_size}px solid ${local_color[local_config.gap_color].hex}`);
         });
     }
 
@@ -67,7 +75,13 @@ class HorizontalBarsDivider {
         let id = this.id;
         let local_widget_id = this.widget_id;
         $.each(this.config.bars, function(index, value) {
-            $(`#${id}`).append(`<div id='bar-${local_widget_id}-${index}'></div>`);
+
+            if (value.half) {
+                $(`#${id}`).append(`<div id='bar-half${local_widget_id}-${index}' class='bar-half'></div>`);
+                $(`#bar-half${local_widget_id}-${index}`).append(`<div id='bar-${local_widget_id}-${index}'></div>`);
+            } else {
+                $(`#${id}`).append(`<div id='bar-${local_widget_id}-${index}'></div>`);
+            }
         });
     }
 

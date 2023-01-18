@@ -233,6 +233,44 @@
           /*border-width: 1px;*/
           /*border-color: #2d2d2d;*/
       }
+
+
+
+      /*.button-stack {*/
+      /*    font: 400 22px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;*/
+      /*    width: 180px;*/
+      /*    height: 70px;*/
+      /*    margin-top: 5px;*/
+      /*    border-radius: 5px;*/
+      /*    display: flex;*/
+      /*    flex-direction: row;*/
+      /*    align-items: center;*/
+      /*    justify-content: flex-end;*/
+      /*}*/
+      /*.button-stack:hover {*/
+      /*    cursor: pointer;*/
+      /*}*/
+
+      /*.menu-text {*/
+      /*    text-align: right;*/
+      /*    font-weight: 700;*/
+      /*    color: #000;*/
+      /*    margin-right: 15px;*/
+      /*}*/
+      /*.menu-icon {*/
+      /*    height: 1.4em;  !*font px/15 rounded to 1 decimal place*!*/
+      /*    margin-right: 15px;*/
+      /*}*/
+
+      /*#button-stack-station { background-color: #e67642; }*/
+      /*#button-stack-station:hover { background-color: #99dd66; }*/
+
+      /*#button-stack-settings { background-color: #ffcc66; }*/
+      /*#button-stack-settings:hover { background-color: #99dd66; }*/
+
+      /*#button-stack-articles { background-color: #ccdeff; }*/
+      /*#button-stack-articles:hover { background-color: #99dd66; }*/
+
   </style>
 </head>
 <body>
@@ -278,9 +316,24 @@
             <img id="menu-home-icon" class="menu-icon" src="./assets/home.svg" alt="HOME"/>
           </div>
         </div>
-        <div class="menu-spacer"></div>
-        <div class="panel-buttons">
-          <div class="temp_msg">Reserved for buttons</div>
+
+        <div id="panel-buttons" class="panel-buttons">
+
+<!--          <div class="temp_msg">Reserved for buttons</div>-->
+<!--          <div id="button-stack-station" class="button-stack">-->
+<!--              <span id="menu-station-txt" class="menu-text">NETWORK</span>-->
+<!--              <img id="menu-station-icon" class="menu-icon" src="./assets/stations.svg" alt="NETWORK"/>-->
+<!--          </div>-->
+<!--          <div id="button-stack-settings" class="button-stack">-->
+<!--            <span id="menu-station-txt" class="menu-text">SETTINGS</span>-->
+<!--            <img id="menu-station-icon" class="menu-icon" src="./assets/gear.svg" alt="NETWORK"/>-->
+<!--          </div>-->
+<!--          <div id="button-stack-articles" class="button-stack">-->
+<!--            <span id="menu-station-txt" class="menu-text">ARTICLES</span>-->
+<!--            <img id="menu-station-icon" class="menu-icon" src="./assets/results2.svg" alt="NETWORK"/>-->
+<!--          </div>-->
+
+
         </div>
         <div class="menu-spacer"></div>
         <div class="panel-spacer"></div>
@@ -325,6 +378,7 @@
 <script type="text/javascript" src="./js/now.js"></script>
 <script type="text/javascript" src="./js/horz_bars_divider.js"></script>
 <script type="text/javascript" src="./js/button_group.js"></script>
+<script type="text/javascript" src="./js/button_stack.js"></script>
 <script>
   // let lcars = new Lcars("container-main", "../config/lcars.json");
 
@@ -412,6 +466,7 @@
           {
               "flex": false,
               "half": true,
+              "location": "top",
               "width": "200px",
               "color": "moonbeam"
           },
@@ -451,6 +506,7 @@
           {
               "flex": false,
               "half": true,
+              "location" : "top",
               "width": "200px",
               "color": "moonbeam"
           },
@@ -494,13 +550,35 @@
   }
   let button_group_marquee = new ButtonGroup("container-marquee", button_group_marquee_config, color, marquee_button_callback);
 
+  //========================================================================================
   function clickHomeCallback() {
       console.log("Home button clicked");
   }
 
+  //========================================================================================
   function marquee_button_callback(index) {
       console.log(`${button_group_marquee_config.buttons[index].txt} button clicked`);
   }
+
+  let button_stack_config = {
+      "font_size" : 22, // px
+      "font_color": "black",
+      "width" : 180, // px
+      "height" : 70,
+      "border_radius" : "5px",
+      "hover_color" : "martian",
+      "button" : [
+          { "txt" : "NETWORK",  "color" : "pumpkinshade", "icon" : "./assets/stations.svg"},
+          { "txt" : "SETTINGS", "color" : "sunflower",    "icon" : "./assets/gear.svg"},
+          { "txt" : "ARTICLES", "color" : "moonbeam",     "icon" : "./assets/results2.svg"},
+      ]
+  }
+
+  //========================================================================================
+  function button_page_selection_callback(index) {
+      console.log(`${button_stack_config.button[index].txt} button clicked`);
+  }
+  let button_stack = new ButtonStack("panel-buttons", button_stack_config, color, button_page_selection_callback);
 
   //========================================================================================
   $(document).ready(function() {
@@ -508,7 +586,7 @@
        $("#title-secondary").text("ONLINE");
 
       $("#button-home").hover(function(){
-          $("#menu-home-txt").css("color", `#${color.martian.hex}`);
+          $("#menu-home-txt").css("color", color.martian.hex);
           $("#menu-home-icon").attr("src","./assets/home-active.svg");
       }, function(){
           $("#menu-home-txt").css("color", "black");

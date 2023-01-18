@@ -1,6 +1,6 @@
 /*
  * ======================================================================================
- * Web Widgets: Button Stack
+ * Web Widgets: Button Group
  * Copyright © Steven M. Lyles
  * https://github.com/steven-lyles/web-widgets
  * https://www.stevenlyles.net
@@ -72,14 +72,14 @@ class ButtonGroup {
 
         $.each(this.config.buttons, function(index, button) {
             if (index == global_config[global_id].selected_index) {
-                $(`#button-group-${index}-${global_id}`).css("background-color", `#${active_color}`);
+                $(`#button-group-${index}-${global_id}`).css("background-color", active_color);
                 $(`#button-group-${index}-${global_id}`).css("font-weight", "bold");
             } else {
-                $(`#button-group-${index}-${global_id}`).css("background-color", `#${bg_color}`);
+                $(`#button-group-${index}-${global_id}`).css("background-color", bg_color);
                 $(`#button-group-${index}-${global_id}`).css("font-weight", "normal");
             }
             if (!button.active) {
-                $(`#button-group-${index}-${global_id}`).css("background-color", `#${inactive_color}`);
+                $(`#button-group-${index}-${global_id}`).css("background-color", inactive_color);
                 $(`#button-group-${index}-${global_id}`).css("font-weight", "normal");
                 $(`#button-group-${index}-${global_id}`).css("color", "#666688");
             }
@@ -105,9 +105,9 @@ class ButtonGroup {
             let button_id = `#button-group-${index}-${this.widget_id}`;
             this.config.buttons[index].active = true;
             console.log();
-            $(button_id).css("background-color", `#${this.config.color_map[this.config.background_color].hex}`);
-            $(button_id).css("box-shadow", `0px 0px 0px 3px #${this.config.color_map[this.config.background_color].hex} inset`);
-            $(button_id).css("color", `#${this.config.color_map[this.config.font_color].hex} `);
+            $(button_id).css("background-color", `${this.config.color_map[this.config.background_color].hex}`);
+            $(button_id).css("box-shadow", `0px 0px 0px 3px ${this.config.color_map[this.config.background_color].hex} inset`);
+            $(button_id).css("color", `${this.config.color_map[this.config.font_color].hex} `);
         }
     }
 
@@ -120,8 +120,8 @@ class ButtonGroup {
                 alert(`${this.config.buttons[index].txt} is active!\nUnable to deactivate a selected button.\nPlease select another choice before deactivating`);
             } else {
                 this.config.buttons[index].active = false;
-                $(button_id).css("background-color", `#${this.config.color_map[this.config.inactive_color].hex}`);
-                $(button_id).css("box-shadow", `0px 0px 0px 3px #${this.config.color_map[this.config.inactive_color].hex} inset`);
+                $(button_id).css("background-color", `${this.config.color_map[this.config.inactive_color].hex}`);
+                $(button_id).css("box-shadow", `0px 0px 0px 3px ${this.config.color_map[this.config.inactive_color].hex} inset`);
                 $(button_id).css("color", "#666688");
             }
         }
@@ -133,7 +133,7 @@ class ButtonGroup {
         return this.config.selected_index;
     }
 
-} /* class Now */
+} /* class ButtonGroup */
 
 //=======================================================================================
 // Callbacks for user events
@@ -144,21 +144,21 @@ $(document).ready(function() {
     $(".button-group").hover( function() {
         let id = `${this.id}`.split("-")[3]
         $(`#${this.id}`).css("cursor", "pointer");
-        $(`#${this.id}`).css("background-color", `#${global_config[id]["color_map"][global_config[id].hover_color].hex}`);
-        $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px #${global_config[id]["color_map"][global_config[id].hover_outline].hex} inset`);
+        $(`#${this.id}`).css("background-color", `${global_config[id]["color_map"][global_config[id].hover_color].hex}`);
+        $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px ${global_config[id]["color_map"][global_config[id].hover_outline].hex} inset`);
     }, function() {
         let id = `${this.id}`.split("-")[3]
         $(`#${this.id}`).css("cursor", "default");
         let index = parseInt(this.id.split("-")[2]);
         if (global_config[id].selected_index == index) {
-            $(`#${this.id}`).css("background-color", `#${global_config[id]["color_map"][global_config[id].active_color].hex}`);
-            $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px #${global_config[id]["color_map"][global_config[id].active_color].hex} inset`);
+            $(`#${this.id}`).css("background-color", `${global_config[id]["color_map"][global_config[id].active_color].hex}`);
+            $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px ${global_config[id]["color_map"][global_config[id].active_color].hex} inset`);
         } else if (!global_config[id].buttons[index].active) {
-            $(`#${this.id}`).css("background-color", `#${global_config[id]["color_map"][global_config[id].inactive_color].hex}`);
-            $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px #${global_config[id]["color_map"][global_config[id].inactive_color].hex} inset`);
+            $(`#${this.id}`).css("background-color", `${global_config[id]["color_map"][global_config[id].inactive_color].hex}`);
+            $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px ${global_config[id]["color_map"][global_config[id].inactive_color].hex} inset`);
         } else {
-            $(`#${this.id}`).css("background-color", `#${global_config[id]["color_map"][global_config[id].background_color].hex}`);
-            $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px #${global_config[id]["color_map"][global_config[id].background_color].hex} inset`);
+            $(`#${this.id}`).css("background-color", `${global_config[id]["color_map"][global_config[id].background_color].hex}`);
+            $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px ${global_config[id]["color_map"][global_config[id].background_color].hex} inset`);
         }
     });
 
@@ -169,12 +169,12 @@ $(document).ready(function() {
         let id = `${this.id}`.split("-")[3]
         if (global_config[id].buttons[index].active) {
             let old_selected_button_id = `#button-group-${global_config[id].selected_index}-${id}`
-            $(old_selected_button_id).css("background-color", `#${global_config[id]["color_map"][global_config[id].background_color].hex}`);
-            $(old_selected_button_id).css("box-shadow", `0px 0px 0px 3px #${global_config[id]["color_map"][global_config[id].background_color].hex} inset`);
+            $(old_selected_button_id).css("background-color", `${global_config[id]["color_map"][global_config[id].background_color].hex}`);
+            $(old_selected_button_id).css("box-shadow", `0px 0px 0px 3px ${global_config[id]["color_map"][global_config[id].background_color].hex} inset`);
             $(old_selected_button_id).css("font-weight", "normal");
             global_config[id].selected_index = index;
             $(`#${this.id}`).css("background-color", `#${global_config[id]["color_map"][global_config[id].active_color].hex}`);
-            $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px #${global_config[id]["color_map"][global_config[id].active_color].hex} inset`);
+            $(`#${this.id}`).css("box-shadow", `0px 0px 0px 3px ${global_config[id]["color_map"][global_config[id].active_color].hex} inset`);
             $(`#${this.id}`).css("font-weight", "bold");
 
             global_config[id].callback.apply(this, [index]);
