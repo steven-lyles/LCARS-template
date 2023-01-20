@@ -48,10 +48,15 @@ class ButtonGroup {
         $(`#${this.id}`).css("display", "flex");
         $(`#${this.id}`).css("flex-direction", "row");
         $(`#${this.id}`).css("align-items", "center");
-        $(`#${this.id}`).css("justify-content", "right");
+        $(`#${this.id}`).css("justify-content", this.config.justify_content);
         $(`#${this.id}`).css("flex-wrap", "wrap");
 
-        $(".button-group").css("margin-left", "10px");
+        if (this.config.justify_content == "right") {
+            $(".button-group").css("margin-left", "10px");
+        } else {
+            $(".button-group").css("margin-right", "10px");
+        }
+
         $(".button-group").css("display", "flex");
         $(".button-group").css("flex-direction", "row");
         $(".button-group").css("align-items", "center");

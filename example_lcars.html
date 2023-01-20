@@ -235,20 +235,22 @@
           flex-direction: row;
           align-items: center;
           justify-content: left;
-
           margin-left: 20px;
           height: 40px;
       }
       .container-subject-menu-buttons {
           display: flex;
           flex-direction: row;
-          align-items: center;
+          align-items: flex-end;
           justify-content: left;
+          width: 65%;
+          overflow: visible;
 
-          /* Dev only... remove for final */
-          background-color: #2d2d2d;
-          width: 500px;
-          height: 40px;
+
+          /*background-color: #2d2d2d; */
+          height: 70px;
+          position: relative;
+          top: -10px;
       }
       .subject-bar-spacer {
           flex: 1 1 auto;
@@ -256,6 +258,7 @@
       }
       .subject-title-container {
           height: 40px;
+          width: 35%;
           /*margin-left: 30px;*/
 
           /*background: #355E3B;*/
@@ -350,8 +353,8 @@
         </div>
 
         <div id="subject-bar" class="subject-bar">
-          <div class="container-subject-menu-buttons">
-            <div class="temp-msg">Reserved for subject buttons &#8594;</div>
+          <div id="container-subject-menu-buttons" class="container-subject-menu-buttons">
+<!--            <div class="temp-msg">Reserved for subject buttons &#8594;</div>-->
           </div>
           <div class="subject-bar-spacer"></div>
           <div id="subject-title-container" class="subject-title-container">
@@ -566,6 +569,7 @@
       "background_color" : "parchment",
       "width" : "150px",
       "height": "50px",
+      "justify_content" : "right",
       "border_radius": "40px",
       "hover_color" : "martian",
       "hover_outline" : "yellow",
@@ -614,6 +618,45 @@
   }
   let button_stack = new ButtonStack("panel-buttons", button_stack_config, color, button_page_selection_callback);
 
+  let button_group_page_config = {
+      "font" : "400 15px/1.5 \"Antonio\", \"Arial Narrow\", \"Avenir Next Condensed\", sans-serif",
+      "font-size" : "1.0em",
+      "font_color" : "black",
+      "background_color" : "evening",
+      "width" : "100px",
+      "height": "25px",
+      "justify_content" : "left",
+      "border_radius": "20px",
+      "hover_color" : "martian",
+      "hover_outline" : "martian",
+      "active_color" :  "martian",
+      "inactive_color" : "galaxy",
+      "selected_index" : 0,
+      "buttons" : [
+          { "txt": "WELCOME", "active" : true },
+          { "txt": "LOGIN",   "active" : true },
+          { "txt": "LOGOUT",  "active" : true }
+      ]
+  }
+  let button_group_page = new ButtonGroup("container-subject-menu-buttons", button_group_page_config, color, page_button_callback);
+
+  //========================================================================================
+  function page_button_callback(index) {
+      console.log(`Page button ${button_group_page_config.buttons[index].txt} clicked`);
+      switch(index) {
+          case 0:
+              $("#os-msg").text(`${detect.OS} detected`);
+              break;
+          case 1:
+              $("#os-msg").text("Please LOG IN");
+              break;
+          case 2:
+              $("#os-msg").text("Please LOG OUT");
+              break;
+          default:
+              break;
+      }
+  }
 
   console.log(detect.OS);
   $("#os-msg").text(`${detect.OS} detected`); // navigator.userAgent
