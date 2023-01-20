@@ -92,6 +92,11 @@ class ButtonStack {
 
 } /* class ButtonStack */
 
+//=======================================================================================
+function set_button_back(button_id, id, index) {
+    $(`#${button_id}`).css("background-color", global_button_stack_config[id].color_map[global_button_stack_config[id].button[index].color].hex);
+}
+
 $(document).ready(function() {
 
     //--------------------------
@@ -113,6 +118,9 @@ $(document).ready(function() {
     $(".button-stack").click( function() {
         let index = parseInt(`${this.id}`.split("-")[2]);
         let id = `${this.id}`.split("-")[3]
+        let button_id = this.id;
+        $(`#${this.id}`).css("background-color", global_button_stack_config[id].color_map[global_button_stack_config[id].hover_color].hex);
+        setTimeout(function() { set_button_back(button_id, id, index) }, 500);
         global_button_stack_config[id].callback.apply(this, [index]);
     });
 

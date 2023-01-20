@@ -272,6 +272,21 @@
           right: 20px;
       }
 
+      .container-subject {
+          font: 400 22px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
+          display: flex;
+          flex-direction: row;
+          /*align-items: top;*/
+          justify-content: left;
+          margin: 20px 20px 20px 20px;
+          height: 100%;
+
+          /*border-style: solid;*/
+          /*border-width: 1px;*/
+          /*border-color: #2d2d2d;*/
+      }
+      #os-msg { font-size: 0.8em; }
+
   </style>
 </head>
 <body>
@@ -344,7 +359,13 @@
           </div>
         </div>
 
-
+        <div id="content" class="container-subject">
+          <div id="welcome-message-info">
+            <p>Welcome User!</p>
+            <p id="os-msg"></p>
+          </div>
+          <!--          <iframe src="test_results.html" name="targetframe" frameborder="0" scrolling="auto" width="100%"></iframe>-->
+        </div>
 
       </div>
     </div>
@@ -378,8 +399,21 @@
 <script type="text/javascript" src="./js/horz_bars_divider.js"></script>
 <script type="text/javascript" src="./js/button_group.js"></script>
 <script type="text/javascript" src="./js/button_stack.js"></script>
+<script type="text/javascript" src="./js/detect_os.js"></script>
 <script>
-  // let lcars = new Lcars("container-main", "../config/lcars.json");
+
+  const detect = new DetectOS();
+
+  let os = detect.OS;
+  function mobile_os() {
+      let mobile = false;
+      if (os == "iPad OS" ||
+          os == "iOS" ||
+          os == "Android") {
+         mobile = true;
+      }
+      return mobile;
+  }
 
   // Load the color map
   let json = $.getJSON({'url': "./config/color_map.json", 'async': false});
@@ -398,7 +432,7 @@
   let logo_widget = new Logo("panel-logo-time", logo_config);
 
   let now_config = {
-      "font_size"        : "26",      // px
+      "font_size"        : "28",      // px
       "font_color"       : "black",
       "background_color" : "#2255ff", // evening
       "width"            : "100%",    // % of container or pixel value (e.g. 100px)
@@ -580,22 +614,38 @@
   }
   let button_stack = new ButtonStack("panel-buttons", button_stack_config, color, button_page_selection_callback);
 
+
+  console.log(detect.OS);
+  $("#os-msg").text(`${detect.OS} detected`); // navigator.userAgent
+
+  function set_home_back() {
+      $("#menu-home-txt").css("color", "black");
+      $("#menu-home-icon").attr("src", "./assets/home.svg");
+  }
+
   //========================================================================================
   $(document).ready(function() {
        $("#title-main").text("LCARS");
        $("#title-secondary").text("ONLINE");
 
       $("#button-home").hover(function(){
-          $("#menu-home-txt").css("color", color.martian.hex);
-          $("#menu-home-icon").attr("src","./assets/home-active.svg");
+            $("#menu-home-txt").css("color", color.martian.hex);
+            $("#menu-home-icon").attr("src", "./assets/home-active.svg");
       }, function(){
-          $("#menu-home-txt").css("color", "black");
-          $("#menu-home-icon").attr("src","./assets/home.svg");
+            $("#menu-home-txt").css("color", "black");
+            $("#menu-home-icon").attr("src", "./assets/home.svg");
       });
 
-      $("#button-home").click( function() {
+
+      $("#button-home").click(function () {
           $("#subject-title").text("WELCOME");
+
+          $("#menu-home-txt").css("color", color.martian.hex);
+          $("#menu-home-icon").attr("src", "./assets/home-active.svg");
+
+          setTimeout(function() { set_home_back(); }, 500);
       });
+
 
   });
 
