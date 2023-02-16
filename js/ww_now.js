@@ -11,9 +11,10 @@
 //=======================================================================================
 // Creates a widget for displaying time and date based on the local machine
 class Now {
-    constructor(container_id, config) {
+    constructor(container_id, config, colors) {
         this.config = config;
         this.id = container_id;
+        this.colors = colors;
 
         this.gen_widget();
         this.gen_css();
@@ -22,8 +23,8 @@ class Now {
     //===================================================================================
     gen_css() {
         $("#time-panel").css("font", `400 ${this.config.font_size}px/1.5 "Roboto", sans-serif`);
-        $("#time-panel").css("background-color", this.config.background_color);
-        $("#time-panel").css("color", this.config.font_color);
+        $("#time-panel").css("background-color", this.colors[this.config.background_color].hex);
+        $("#time-panel").css("color", this.colors[this.config.font_color].hex);
         $("#time-panel").css("padding", "10px 0px 5px 0px");
         $("#time-panel").css("width", this.config.width);
         $("#time-panel").css("height", "auto");

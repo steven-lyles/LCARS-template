@@ -166,7 +166,7 @@ body {
 }
 .container-stations {
     /*background-color: black;*/
-    height: 150px;
+    height: 110px;
     margin-left: 10px;
     /*background-color: #444a77;*/
     display: flex;
@@ -201,8 +201,8 @@ body {
 #button-home:hover .menu-text { color: #99dd66; }
 #button-home:hover .menu-icon { content: url("../assets/home-active.svg"); }
 .button-station {
-    width: 150px;
-    height: 50px;
+    width: 130px;
+    height: 30px;
     margin-left: 10px;
     border-radius: 40px;
     display: flex;
@@ -210,7 +210,7 @@ body {
     align-items: center;
     justify-content: right;
     color: black;
-    font-size: 0.85em;
+    font-size: 0.8em;
     padding-right: 20px;
     background: #ffcc99;
 }

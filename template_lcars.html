@@ -13,81 +13,49 @@
   <title>L.C.A.R.S. Template</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/lcars.css">
+  <link rel="stylesheet" type="text/css" href="css/template_lcars.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
   <link rel="icon" href="https://stevenlyles.net/assets/graphics/true-north.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <style>
-      html, body {
-          height: 100%;
-          background: black;
-          color: #88bbff; // ghost
-      font: 400 20px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
-          margin-left: 5px;
-          margin-right: 10px;
-          margin-bottom: 10px;
-          overflow: hidden;
-      }
-      .temp_msg {
-          color: white;
-          text-align: center;
-          padding-right: 10px;
-          font: 400 16px/1.5  "Avenir Next Condensed", sans-serif;
-      }
-      .container-main {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-      }
-      .container-header {
-          flex: 0 1 auto;
-          height: 280px;
-          margin-bottom: 5px;
-          background-color: #0047AB;
-
-          /* dev only remove */
-          /*border-style: solid;*/
-          /*border-width: 1px;*/
-          /*border-color: #2255ff;*/
-      }
-      .container-content {
-          flex: 1 1 auto;
-          margin-bottom: 5px;
-          background-color: #444a77;
-
-          /* dev only remove */
-          /*border-style: solid;*/
-          /*border-width: 1px;*/
-          /*border-color: #2255ff;*/
-      }
-      .container-footer {
-          flex: 0 1 100px;
-          margin-bottom: 15px;
-          overflow: hidden;
-          background-color: #27322c;
-
-          /* dev only remove */
-          /*border-style: solid;*/
-          /*border-width: 1px;*/
-          /*border-color: #2255ff;*/
-      }
-  </style>
 </head>
 <body>
-<div class="container-main">
+  <div id="container-main" class="container-main">
 
-  <div class="container-header">
-    <div class="temp_msg">Header Container</div>
+<!--  <div class="container-header">-->
+<!--    <div class="container-frames">-->
+
+<!--      <div class="container-frame-left container-frame-left-top">-->
+<!--        <div class="panel-logo">-->
+<!--          <a href="" style="font-size: 8px;"></a>-->
+<!--        </div>-->
+<!--        <div class="menu-spacer"></div>-->
+<!--        <div id="panel-time" class="panel-time"></div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="container-content">-->
+<!--    <div class="temp_msg">Content Container</div>-->
+<!--  </div>-->
+
+<!--  <div class="container-footer">-->
+<!--    <div class="temp_msg">Footer Container</div>-->
   </div>
 
-  <div class="container-content">
-    <div class="temp_msg">Content Container</div>
-  </div>
+  <!-- Add any needed scripts here -->
+  <script src="./js/ww_utils.js"></script>
+  <script src="./js/ww_logo.js"></script>
+  <script src="./js/ww_now.js"></script>
+  <script src="./js/ww_horz_bars_divider.js"></script>
+  <script src="./js/template_lcars.js"></script>
 
-  <div class="container-footer">
-    <div class="temp_msg">Footer Container</div>
-  </div>
+  <script>
+    let page = new Lcars("container-main", "./config/template_lcars.json");
+
+  </script>
+
 
 </body>
 </html>
