@@ -9,6 +9,7 @@
  * =====================================================================================
 -->
 <!DOCTYPE html>
+<html lang="en">
 <head>
   <title>L.C.A.R.S. Template</title>
   <meta charset="UTF-8">
@@ -22,40 +23,37 @@
 <body>
   <div id="container-main" class="container-main">
 
-<!--  <div class="container-header">-->
-<!--    <div class="container-frames">-->
+    <div id="dev-header"></div>
 
-<!--      <div class="container-frame-left container-frame-left-top">-->
-<!--        <div class="panel-logo">-->
-<!--          <a href="" style="font-size: 8px;"></a>-->
-<!--        </div>-->
-<!--        <div class="menu-spacer"></div>-->
-<!--        <div id="panel-time" class="panel-time"></div>-->
-<!--      </div>-->
+  <div class="container-content">
+    <div class="temp-msg">Content Container</div>
+  </div>
 
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <div class="container-content">-->
-<!--    <div class="temp_msg">Content Container</div>-->
-<!--  </div>-->
-
-<!--  <div class="container-footer">-->
-<!--    <div class="temp_msg">Footer Container</div>-->
+  <div class="container-footer">
+    <div class="temp-msg">Footer Container</div>
   </div>
 
   <!-- Add any needed scripts here -->
   <script src="./js/ww_utils.js"></script>
+
   <script src="./js/ww_logo.js"></script>
   <script src="./js/ww_now.js"></script>
   <script src="./js/ww_horz_bars_divider.js"></script>
-  <script src="./js/template_lcars.js"></script>
+  <script src="./js/ww_button_group.js"></script>
+
+  <script src="./js/ww_lcars_header.js"></script>
 
   <script>
-    let page = new Lcars("container-main", "./config/template_lcars.json");
+
+    let json = $.getJSON({'url': './config/template_lcars.json', 'async': false});
+    config = JSON.parse(json.responseText);
+
+    function button_group_callback(index) {
+        console.log(`${config.header.button_group_marquee_config.buttons[index].txt} button clicked`);
+    }
+
+    let header = new LcarsHeader("dev-header", config.header, config.colors, button_group_callback);
 
   </script>
-
-
 </body>
 </html>

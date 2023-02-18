@@ -27,7 +27,7 @@ class Logo {
         $(".panel-logo").css("width", this.config.width);
         $(".panel-logo").css("background", this.colors[this.config.background_color].hex);
         $(".panel-logo").css("background-image", `url(${this.config.logo_image})`);
-        $(".panel-logo").css("background-size", `${this.config.logo_size} ${this.config.logo_size}`);
+        $(".panel-logo").css("background-size", `${this.config.logo_size}`);
         $(".panel-logo").css("background-repeat", "no-repeat");
         $(".panel-logo").css("background-position", "center center");
 
@@ -38,10 +38,8 @@ class Logo {
 
     //===================================================================================
     gen_widget() {
-        let logo = "<div id='panel-logo' class='panel-logo'>\n";
-        logo +=    `  <a href='${this.config.url} target='_blank'></a>\n`;
-        logo +=    "</div>"
-        $(`#${this.id}`).append(logo);
+        $(`#${this.id}`).append(`<a id='logo-link' href='${this.config.url}' target='_blank'></a>`);
+        $("#logo-link").append("<div id='panel-logo' class='panel-logo'></div>")
         $(`#${this.id}`).append("<div id='menu-spacer' class='menu-spacer'></div>\n");
     }
 

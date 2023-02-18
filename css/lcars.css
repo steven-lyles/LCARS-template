@@ -10,7 +10,11 @@ body {
     margin-bottom: 10px;
     overflow: hidden;
 }
-
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #2255ff;
+}
 .container-main {
     display: flex;
     flex-direction: column;

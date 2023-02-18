@@ -8,12 +8,7 @@ html, body {
     margin-bottom: 10px;
     overflow: hidden;
 }
-.temp_msg {
-    color: white;
-    text-align: center;
-    padding-right: 10px;
-    font: 400 16px/1.5  "Avenir Next Condensed", sans-serif;
-}
+
 .container-main {
     display: flex;
     flex-direction: column;
@@ -28,46 +23,42 @@ html, body {
     overflow: hidden;
     align-self: flex-start;
 }
+.left-column-width { width: 160px; }
+.header-height { height: 250px; }
 
-/* Header Styling */
-.container-header {
-    flex: 0 1 auto;
-    height: 280px;
-    margin-bottom: 5px;
-    /*background-color: #0047AB;*/
-
-    /* dev only remove */
-    border-style: solid;
-    border-width: 1px;
-    border-color: #2255ff;
-}
 .container-frame-left {
     flex: 0 1 auto;
-    text-align: right;
-    font-size: 19px;
+    text-align: center;
+    font-size: 16px;
     font-weight: 700;
-    color: #000;
-    /*background-color: black;*/
+    color: black;
+    /*background-color: pink;*/
 }
-.container-frame-left-top {
-    /*width: 180px;*/
-    height: 280px;
-    background: #25f;
-    border-radius: 0 0 0 100px;
-}
-container-frame-right {
+.container-frame-right {
     flex: 1 1 auto;
     width: auto;
     min-width: 500px;
+
+    /* dev only remove */
+    /*background-color: #b3a68b;*/
+}
+
+
+.temp-msg {
+    color: white;
+    text-align: center;
+    padding-right: 10px;
+    font: 400 16px/1.5  "Avenir Next Condensed", sans-serif;
 }
 
 /* Content Styling */
 .container-content {
     flex: 1 1 auto;
     margin-bottom: 5px;
-    background-color: #444a77;
 
     /* dev only remove */
+    border-radius: 80px 0 0 0;
+    background-color: #444a77;
     /*border-style: solid;*/
     /*border-width: 1px;*/
     /*border-color: #2255ff;*/
@@ -78,9 +69,10 @@ container-frame-right {
     flex: 0 1 100px;
     margin-bottom: 15px;
     overflow: hidden;
-    background-color: #27322c;
 
     /* dev only remove */
+    border-radius: 0 0 0 80px;
+    background-color: #27322c;
     /*border-style: solid;*/
     /*border-width: 1px;*/
     /*border-color: #2255ff;*/

@@ -49,63 +49,98 @@
     "willow"        : { "hex" : "#95C860", "rgb" : "149,200,96" }
   },
   "header" : {
-    "title_primary"  : "LCARS",
-    "title_secondary": "ONLINE",
-    "title_desc" : "This template creates the basic LCARS interface.",
-    "nav_site" : [
-      {
-        "name" : "Nav 1",
-        "url"  : ""
-      },
-      {
-        "name" : "Nav 2",
-        "url"  : ""
-      },
-      {
-        "name" : "Nav 3",
-        "url"  : ""
-      }
-    ],
+    "height" : 250,
+    "panel" : {
+      "background_color" : "evening",
+      "radius" : "100"
+    },
+    "banner" : {
+      "title_primary"  : "LCARS",
+      "title_secondary": "ONLINE",
+      "height" : 60,
+      "font_color" : "ghost"
+    },
+    "msg" : {
+      "text" : "This template creates the basic LCARS header",
+      "height" : "20px",
+      "font_color" : "white",
+      "font" : "400 16px/1.5 'Arial Narrow', sans-serif"
+    },
+    "button_group_marquee_config" : {
+      "font" : "400 15px/1.5 \"Antonio\", \"Arial Narrow\", \"Avenir Next Condensed\", sans-serif",
+      "font-size" : "1.2em",
+      "font_color" : "black",
+      "background_color" : "parchment",
+      "width" : "100px",
+      "height": "30px",
+      "gap" : "10px",
+      "justify_content" : "right",
+      "border_radius": "30px",
+      "hover_color" : "martian",
+      "hover_outline" : "yellow",
+      "active_color" :  "martian",
+      "inactive_color" : "galaxy",
+      "selected_index" : 0,
+      "buttons" : [
+        { "txt": "Systems", "active" : true },
+        { "txt": "Engineering", "active" : true },
+        { "txt": "Operations", "active" : true },
+        { "txt": "Navigation", "active" : true },
+        { "txt": "Weapons", "active" : true }
+      ]
+    },
     "logo" : {
-      "height"           : "130px",
+      "height"           : "90px",
       "width"            : "160px",
-      "logo_image"       : "./assets/sample-logo.svg",
-      "logo_size"        : "85%",
-      "background_color" : "dusk",
-      "url"              : "https://stevenlyles.net",
+      "logo_image"       : "./assets/world.png",
+      "logo_size"        : "50%",
+      "background_color" : "linen",
+      "url"              : "https://www.stevenlyles.net",
       "spacer_size"      : 5,
       "spacer_color"     : "black"
     },
     "now" : {
-      "font_size"        : "28",
+      "font_size"        : "24",
       "font_color"       : "black",
       "background_color" : "evening",
       "width"            : "100%",
       "border_radius"    : "22"
     },
-    "horz_divider_header" : {
-      "height"    : 15,
+    "corner" : {
+      "width" : 40,
+      "height": 44,
+      "foreground_color" : "evening",
+      "background_color" : "black",
+      "radius" : "0 0 0 40px"
+    },
+    "horz_bars_config" : {
+      "height"    : 14,
       "gap_size"  : 5,
       "gap_color" : "black",
       "bars" : [
         {
           "flex": true,
           "half": false,
-          "width": "420px",
+          "width": "320px",
           "color": "evening"
         },
         {
           "flex": false,
-          "half": true,
-          "location" : "top",
-          "width": "120px",
-          "color": "moon_beam"
+          "half": false,
+          "width": "40px",
+          "color": "sunflower"
+        },
+        {
+          "flex": false,
+          "half": false,
+          "width": "200px",
+          "color": "cool"
         },
         {
           "flex": true,
           "half": false,
-          "width": "420px",
-          "color": "midnight"
+          "width": "200px",
+          "color": "evening"
         },
         {
           "flex": false,
