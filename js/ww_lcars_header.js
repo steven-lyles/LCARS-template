@@ -16,13 +16,15 @@ class LcarsHeader {
         this.config = config;
         this.id = container_id;
         this.colors = colors;
-        this.callback = callback;
+        this.callback = callback; // callback for marquee nav buttons
 
         this.gen_widget();
         this.gen_css();
     }
 
     //===================================================================================
+    // The marquee section size is flexible. This calculates it's size based on the height
+    // of the header minus the other elements.
     marquee_size() {
         let h_header  = this.config.height;
         let h_banner  = this.config.banner.height;

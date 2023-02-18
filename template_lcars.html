@@ -23,14 +23,16 @@
 <body>
   <div id="container-main" class="container-main">
 
+    <!-- Create container for header -->
     <div id="dev-header"></div>
 
-  <div class="container-content">
-    <div class="temp-msg">Content Container</div>
-  </div>
+    <div class="container-content">
+      <div class="temp-msg">Content Container</div>
+    </div>
 
-  <div class="container-footer">
-    <div class="temp-msg">Footer Container</div>
+    <div class="container-footer">
+      <div class="temp-msg">Footer Container</div>
+    </div>
   </div>
 
   <!-- Add any needed scripts here -->
@@ -44,14 +46,19 @@
   <script src="./js/ww_lcars_header.js"></script>
 
   <script>
-
+    //------------------------------------
+    // Load the configuration for the page
     let json = $.getJSON({'url': './config/template_lcars.json', 'async': false});
     config = JSON.parse(json.responseText);
 
+    //-----------------------------------------------------------------------
+    // Define callback for main nav buttons in marquee button group of header
     function button_group_callback(index) {
         console.log(`${config.header.button_group_marquee_config.buttons[index].txt} button clicked`);
     }
 
+    //----------------------------------------------------------------------------------------------
+    // Create instance of header pasing container id, config, color map and callback for nav buttons
     let header = new LcarsHeader("dev-header", config.header, config.colors, button_group_callback);
 
   </script>
