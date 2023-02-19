@@ -61,7 +61,7 @@ a {
     margin-bottom: 5px;
 
     /* dev only remove */
-    /*border-radius: 80px 0 0 0;*/
+    border-radius: 80px 0 0 0;
     background-color: #444a77;
     /*border-style: solid;*/
     /*border-width: 1px;*/
