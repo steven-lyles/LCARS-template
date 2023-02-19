@@ -12,7 +12,7 @@
     "periwinkle"    : { "hex" : "#aaaaff", "rgb" : "170,170,255"},
     "pumpkin"       : { "hex" : "#f0781e", "rgb" : "240,120,30"},
     "sunflower"     : { "hex" : "#ffcc66", "rgb" : "255,204,102"},
-    "moon_beam"     : { "hex" : "#ccdeff", "rgb" : "204,222,255"},
+    "moonbeam"      : { "hex" : "#ccdeff", "rgb" : "204,222,255"},
     "tangerine"     : { "hex" : "#ff8833", "rgb" : "255,136,51"},
     "pumpkin_shade" : { "hex" : "#ff7744", "rgb" : "255,119,68"},
     "mars"          : { "hex" : "#dd4444", "rgb" : "221,68,68"},
