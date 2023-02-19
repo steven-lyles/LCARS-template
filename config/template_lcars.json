@@ -49,7 +49,7 @@
     "willow"        : { "hex" : "#95C860", "rgb" : "149,200,96" }
   },
   "header" : {
-    "height" : 250,
+    "height" : 230,
     "panel" : {
       "background_color" : "evening",
       "radius" : "100"
@@ -100,9 +100,8 @@
       "spacer_color"     : "black"
     },
     "now" : {
-      "font_size"        : "24",
+      "font_size"        : "26",
       "font_color"       : "black",
-      "background_color" : "evening",
       "width"            : "100%",
       "border_radius"    : "22"
     },

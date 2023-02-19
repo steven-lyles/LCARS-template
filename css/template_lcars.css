@@ -41,7 +41,7 @@ a {
 .container-frame-right {
     flex: 1 1 auto;
     width: auto;
-    min-width: 500px;
+    min-width: 200px;
 
     /* dev only remove */
     /*background-color: #b3a68b;*/
@@ -65,7 +65,7 @@ a {
     background-color: #444a77;
     /*border-style: solid;*/
     /*border-width: 1px;*/
-    /*border-color: #2255ff;*/
+    /*border-color: #444a77;*/
 }
 
 /* Footer Styling */
