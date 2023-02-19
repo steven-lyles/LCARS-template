@@ -71,8 +71,7 @@ class LcarsHeader {
         $(".header-top-corner-bg").css("width", `${this.config.corner.width}px`);
         $(".header-top-corner-bg").css("height", `${this.config.corner.height}px`);
         $(".header-top-corner-bg").css("background-color", this.colors[this.config.corner.foreground_color].hex);
-        // $(".header-top-corner-bg").css("display", "flex");
-        // $(".header-top-corner-bg").css("flex-direction", "flex");
+
         $(".header-top-corner").css("width", `${this.config.corner.width}px`);
         $(".header-top-corner").css("height", `${this.config.corner.height}px`);
         $(".header-top-corner").css("background-color", this.colors[this.config.corner.background_color].hex);

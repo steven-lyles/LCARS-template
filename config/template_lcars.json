@@ -52,7 +52,7 @@
     "height" : 230,
     "panel" : {
       "background_color" : "evening",
-      "radius" : "100"
+      "radius" : "90"
     },
     "banner" : {
       "title_primary"  : "LCARS",
@@ -140,6 +140,122 @@
           "half": false,
           "width": "200px",
           "color": "evening"
+        },
+        {
+          "flex": false,
+          "half": false,
+          "width": "50px",
+          "color": "galaxy"
+        }
+      ]
+    }
+  },
+  "content" : {
+
+  },
+  "footer" : {
+    "height" : 100,
+    "panel" : {
+      "background_color" : "evening",
+      "radius" : "90"
+    },
+    "content" : {
+      "height" : "42px",
+      "font_size" : "15px",
+      "font_color" : "ice",
+      "items" : [
+        {
+          "type": "msg",
+          "txt" : "POWERED BY",
+          "font_size" : "15px",
+          "src" : "",
+          "url" : ""
+        },
+        {
+          "type" : "icon",
+          "txt"  : "HTML5",
+          "font_size" : "15px",
+          "src"  : "../assets/html_5_logo.png",
+          "url"  : "https://www.w3schools.com/html/",
+          "width": "18px"
+        },
+        {
+          "type" : "icon",
+          "txt"  : "CSS3",
+          "font_size" : "15px",
+          "src"  : "../assets/css_3_logo.png",
+          "url"  : "https://en.wikipedia.org/wiki/CSS",
+          "width": "18px"
+        },
+        {
+          "type" : "icon",
+          "txt"  : "Jquery",
+          "font_size" : "15px",
+          "src"  : "../assets/jquery_logo.png",
+          "url"  : "https://jquery.com",
+          "width": "20px"
+        },
+        {
+          "type" : "icon",
+          "txt"  : "JSON",
+          "font_size" : "15px",
+          "src"  : "../assets/json_logo.png",
+          "url"  : "https://www.json.org/json-en.html",
+          "width": "22px"
+        },
+        {
+          "type" : "demarcation",
+          "txt"  : "&#8226;",
+          "font_size" : "25px",
+          "src" : "",
+          "url" : ""
+        },
+        {
+          "type" : "link",
+          "txt"  : "https://www.stevenlyles.net",
+          "font_size" : "13px",
+          "src"  : "",
+          "url"  : "https://www.stevenlyles.net"
+        }
+
+      ]
+    },
+    "corner" : {
+      "width" : 40,
+      "height": 44,
+      "foreground_color" : "evening",
+      "background_color" : "black",
+      "radius" : "0 0 0 40px"
+    },
+    "horz_divider_footer_config" : {
+      "height"    : 14,
+      "gap_size"  : 5,
+      "gap_color" : "black",
+      "bars" : [
+        {
+          "flex": true,
+          "half": false,
+          "width": "320px",
+          "color": "evening"
+        },
+        {
+          "flex": false,
+          "half": false,
+          "width": "40px",
+          "color": "tangerine"
+        },
+        {
+          "flex": false,
+          "half": true,
+          "location" : "top",
+          "width": "200px",
+          "color": "moonbeam"
+        },
+        {
+          "flex": true,
+          "half": false,
+          "width": "200px",
+          "color": "midnight"
         },
         {
           "flex": false,
