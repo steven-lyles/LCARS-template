@@ -27,7 +27,42 @@
     <div id="header-container"></div>
 
     <div class="container-content">
-      <div class="temp-msg">Content Container</div>
+<!--      <div class="temp-msg">Content Container</div>-->
+      <div class="container-row">
+        <div class="container-frame-left-middle">
+
+          <div class="panel-home">
+            <div id="button-home" class="button-content-container">
+              <span id="menu-home-txt" class="menu-text">HOME</span>
+              <img id="menu-home-icon" class="menu-icon" src="./assets/home.svg" alt="HOME"/>
+            </div>
+          </div>
+
+          <div class="panel-buttons">
+            <div id="button-station" class="button">
+              <div class="button-content-container">
+                <span id="menu-station-txt" class="menu-text">NETWORK</span>
+                <img id="menu-station-icon" class="menu-icon" src="./assets/stations.svg" alt="NETWORK"/>
+              </div>
+            </div>
+            <div id="button-automations" class="button">
+              <div class="button-content-container">
+                <span id="menu-automation-txt" class="menu-text">SETTINGS</span>
+                <img id="menu-automation-icon" class="menu-icon" src="./assets/gear.svg" alt="SETTINGS"/>
+              </div>
+            </div>
+            <div id="button-results" class="button">
+              <div class="button-content-container">
+                <span id="menu-results-txt" class="menu-text">ARTICLES</span>
+                <img id="menu-results-icon" class="menu-icon" src="./assets/results2.svg" alt="ARTICLES"/>
+              </div>
+            </div>
+          </div>
+          <div class="menu-spacer"></div>
+          <div class="panel-spacer"></div>
+
+        </div>
+      </div>
     </div>
 
     <!-- Create container for footer -->
@@ -44,6 +79,7 @@
   <script src="./js/ww_button_group.js"></script>
 
   <script src="js/lcars_header.js"></script>
+  <script src="js/lcars_content.js"></script>
   <script src="js/lcars_footer.js"></script>
 
   <script>
@@ -54,17 +90,28 @@
 
     //-----------------------------------------------------------------------
     // Define callback for main nav buttons in marquee button group of header
-    function button_group_callback(index) {
+    function button_group_nav_callback(index) {
         console.log(`${config.header.button_group_marquee_config.buttons[index].txt} button clicked`);
+    }
+
+    function button_stack_subject_callback(index) {
+        console.log(`Subject button ${index} clicked`);
+    }
+
+    function button_group_page_callback(index) {
+        console.log(`Page button ${index} clicked`);
     }
 
     //-----------------------------------------------------------------------------------------------
     // Create instance of header passing container id, config, color map and callback for nav buttons
-    let header = new LcarsHeader("header-container", config.header, config.colors, button_group_callback);
+    let header = new LcarsHeader("header-container", config.header, config.colors, button_group_nav_callback);
 
     //----------------------------------------------------------------------
     // Create instance of footer passing container id, config, and color map
     let footer = new LcarsFooter("footer-container", config.footer, config.colors);
+
+    // let content = new LcarsContent("content-container", config.content, config.colors, button_stack_subject_callback, button_group_page_callback);
+
 
   </script>
 </body>

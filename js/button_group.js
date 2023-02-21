@@ -52,9 +52,9 @@ class ButtonGroup {
         $(`#${this.id}`).css("flex-wrap", "wrap");
 
         if (this.config.justify_content == "right") {
-            $(".button-group").css("margin-left", "10px");
+            $(".button-group").css("margin-left", "20px");
         } else {
-            $(".button-group").css("margin-right", "10px");
+            $(".button-group").css("margin-right", "20px");
         }
 
         $(".button-group").css("display", "flex");

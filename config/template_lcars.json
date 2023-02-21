@@ -151,7 +151,11 @@
     }
   },
   "content" : {
-
+    "panel_home" : {
+      "height" : 100,
+      "background_color" : "evening",
+      "radius" : "80px"
+    }
   },
   "footer" : {
     "height" : 100,
