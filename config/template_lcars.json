@@ -50,6 +50,7 @@
     "moss"          : { "hex" : "#8A9A5B", "rgb" : "138, 154, 91"},
     "fall_leaf"     : { "hex" : "#E67642", "rgb" : "235, 118, 66"}
   },
+  "left_panel_width" : "160px",
   "header" : {
     "height" : 230,
     "panel" : {
@@ -90,9 +91,9 @@
       ]
     },
     "logo" : {
-      "height"           : "90px",
+      "height"           : "110px",
       "width"            : "160px",
-      "logo_image"       : "./assets/starfleet-logo.png",
+      "logo_image"       : "./assets/starfleet-logo-3.png",
       "logo_size"        : "60%",
       "background_color" : "linen",
       "url"              : "https://www.stevenlyles.net",
@@ -100,7 +101,7 @@
       "spacer_color"     : "black"
     },
     "now" : {
-      "font_size"        : "26",
+      "font_size"        : "24",
       "font_color"       : "black",
       "width"            : "100%",
       "border_radius"    : "22"

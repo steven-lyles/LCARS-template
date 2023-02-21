@@ -22,16 +22,15 @@ class LcarsFooter {
 
     //===================================================================================
     gen_css() {
-        // $(".container-footer").css("background-color", "#A0C092");
+        $(".container-frame-left-bottom").css("min-width", this.config.left_panel_width);
+        $(".container-frame-left-bottom").css("height", `${this.config.height}px`);
+        $(".container-frame-left-bottom").css("background-color", this.colors[ this.config.panel.background_color ].hex);
+        $(".container-frame-left-bottom").css("border-radius", `0 0 0 ${this.config.panel.radius}px`);
 
         $(".container-footer").css("height", `${this.config.height}px`);
         $(".container-footer").css("flex", `0 1 ${this.config.height}px`);
         $(".container-footer").css("margin-bottom", "15px");
-        $(".container-footer").css("overflow", "hidden");
-
-        $(".container-frame-left-bottom").css("height", `${this.config.height}px`);
-        $(".container-frame-left-bottom").css("background-color", this.colors[ this.config.panel.background_color ].hex);
-        $(".container-frame-left-bottom").css("border-radius", `0 0 0 ${this.config.panel.radius}px`);
+        // $(".container-footer").css("overflow", "hidden");
 
         $(".footer-content").css("display", "flex");
         $(".footer-content").css("flex-direction", "row");
@@ -40,9 +39,12 @@ class LcarsFooter {
         $(".footer-content").css("height", this.config.content.height);
         $(".footer-content").css("margin-left", "20px");
         $(".footer-content").css("font-size", this.config.content.font_size);
+        // $(".footer-content").css("width", "100%");
+        // $(".footer-content").css("background-color", "#A0C092");
+        $(".footer-container").css("flex", "1");
 
 
-        $(".footer-msg").css("text-align", "center");
+        $(".footer-msg").css("text-align", "auto");
         $(".footer-msg").css("padding-left", "10px");
         $(".footer-msg").css("padding-right", "10px");
         $(".footer-msg").css("font", `400 ${this.config.content.font_size}/1.5  "Avenir Next Condensed", sans-serif;`);
@@ -69,7 +71,7 @@ class LcarsFooter {
         $(`#${this.id}`).append("<div id='footer' class='container-footer'></div>");
         $("#footer").append("<div id='footer-row' class='container-row'></div>");
 
-        $("#footer-row").append("<div class='container-frame-left container-frame-left-bottom left-column-width'></div>");
+        $("#footer-row").append("<div class='container-frame-left container-frame-left-bottom left-panel-width'></div>");
 
         $("#footer-row").append("<div id='container-frame-right-footer' class='container-frame-right'></div>");
 
@@ -96,7 +98,6 @@ class LcarsFooter {
                     break;
             }
         });
-
 
 
         $("#container-frame-right-footer").append("<div id='footer-corner-bg' class='footer-corner-bg'></div>");

@@ -23,9 +23,14 @@
 <body>
   <div id="container-main" class="container-main">
 
+    <!-- =========================== -->
     <!-- Create container for header -->
+    <!-- =========================== -->
     <div id="header-container"></div>
 
+    <!-- ============================ -->
+    <!-- Create container for content -->
+    <!-- ============================ -->
     <div class="container-content">
 <!--      <div class="temp-msg">Content Container</div>-->
       <div class="container-row">
@@ -48,7 +53,9 @@
       </div>
     </div>
 
+    <!-- =========================== -->
     <!-- Create container for footer -->
+    <!-- =========================== -->
     <div id="footer-container"></div>
 
   </div>
@@ -72,6 +79,15 @@
     let json = $.getJSON({'url': './config/template_lcars.json', 'async': false});
     config = JSON.parse(json.responseText);
 
+    $(".left-panel-width").css("width", config.left_panel_width);
+
+    config.footer["left_panel_width"] = config.left_panel_width; // this is hack and needs to be figured out!!!
+
+    //==================================================================================================================
+    // HEADER
+    //==================================================================================================================
+
+
     //-----------------------------------------------------------------------
     // Define callback for main nav buttons in marquee button group of header
     function button_group_nav_callback(index) {
@@ -90,11 +106,10 @@
     // Create instance of header passing container id, config, color map and callback for nav buttons
     let header = new LcarsHeader("header-container", config.header, config.colors, button_group_nav_callback);
 
-    //----------------------------------------------------------------------
-    // Create instance of footer passing container id, config, and color map
-    let footer = new LcarsFooter("footer-container", config.footer, config.colors);
 
-
+    //==================================================================================================================
+    // CONTENT
+    //==================================================================================================================
 
 
     let button_stack_uniform_config = {
@@ -106,7 +121,7 @@
         "border_radius" : "5px",
         "hover_color" : "martian",
         "button" : [
-            { "txt" : "SHIP", "color" : "fall_leaf", "icon" : "../assets/ship.svg"},
+            { "txt" : "SYSTEMS", "color" : "fall_leaf", "icon" : "../assets/ship.svg"},
             { "txt" : "COMPUTER", "color" : "sunflower", "icon" : "../assets/stations.svg"},
             { "txt" : "PROPULSION", "color" : "moonbeam", "icon" : "../assets/rocket-icon.svg"}
         ]
@@ -141,8 +156,15 @@
     let button_stack_uniform = new ButtonStack("buttons-subject", button_stack_uniform_config, config.colors, button_uniform);
 
 
-
     // let content = new LcarsContent("content-container", config.content, config.colors, button_stack_subject_callback, button_group_page_callback);
+
+    //==================================================================================================================
+    // FOOTER
+    //==================================================================================================================
+
+    //----------------------------------------------------------------------
+    // Create instance of footer passing container id, config, and color map
+    let footer = new LcarsFooter("footer-container", config.footer, config.colors);
 
 
   </script>
