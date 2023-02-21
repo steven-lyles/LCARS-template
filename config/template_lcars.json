@@ -46,7 +46,9 @@
     "terracotta"    : { "hex" : "#9F4639", "rgb" : "159,70,57" },
     "green_slate"   : { "hex" : "#A0C092", "rgb" : "160,192,146" },
     "moss"          : { "hex" : "#8A9A5B", "rgb" : "138,154,91" },
-    "willow"        : { "hex" : "#95C860", "rgb" : "149,200,96" }
+    "willow"        : { "hex" : "#95C860", "rgb" : "149,200,96" },
+    "moss"          : { "hex" : "#8A9A5B", "rgb" : "138, 154, 91"},
+    "fall_leaf"     : { "hex" : "#E67642", "rgb" : "235, 118, 66"}
   },
   "header" : {
     "height" : 230,
@@ -82,9 +84,7 @@
       "inactive_color" : "galaxy",
       "selected_index" : 0,
       "buttons" : [
-        { "txt": "Systems", "active" : true },
         { "txt": "Engineering", "active" : true },
-        { "txt": "Operations", "active" : true },
         { "txt": "Navigation", "active" : true },
         { "txt": "Weapons", "active" : true }
       ]
@@ -92,8 +92,8 @@
     "logo" : {
       "height"           : "90px",
       "width"            : "160px",
-      "logo_image"       : "./assets/world.png",
-      "logo_size"        : "50%",
+      "logo_image"       : "./assets/starfleet-logo.png",
+      "logo_size"        : "60%",
       "background_color" : "linen",
       "url"              : "https://www.stevenlyles.net",
       "spacer_size"      : 5,

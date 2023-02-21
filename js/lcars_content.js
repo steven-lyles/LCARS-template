@@ -22,7 +22,7 @@ class LcarsContent {
 
     //===================================================================================
     gen_css() {
-        $(`#${this.id}`).css("background-color", "#444a77");
+        // $(`#${this.id}`).css("background-color", "#444a77");
         $(`#${this.id}`).css("border-radius", "80px 0 0 0");
         $(`#${this.id}`).css("height", "300px");
 

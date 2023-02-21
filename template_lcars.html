@@ -17,7 +17,7 @@
   <link rel="stylesheet" type="text/css" href="css/template_lcars.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
-  <link rel="icon" href="https://stevenlyles.net/assets/graphics/true-north.png">
+<!--  <link rel="icon" href="https://stevenlyles.net/assets/graphics/true-north.png">-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
@@ -38,26 +38,9 @@
             </div>
           </div>
 
-          <div class="panel-buttons">
-            <div id="button-station" class="button">
-              <div class="button-content-container">
-                <span id="menu-station-txt" class="menu-text">NETWORK</span>
-                <img id="menu-station-icon" class="menu-icon" src="./assets/stations.svg" alt="NETWORK"/>
-              </div>
-            </div>
-            <div id="button-automations" class="button">
-              <div class="button-content-container">
-                <span id="menu-automation-txt" class="menu-text">SETTINGS</span>
-                <img id="menu-automation-icon" class="menu-icon" src="./assets/gear.svg" alt="SETTINGS"/>
-              </div>
-            </div>
-            <div id="button-results" class="button">
-              <div class="button-content-container">
-                <span id="menu-results-txt" class="menu-text">ARTICLES</span>
-                <img id="menu-results-icon" class="menu-icon" src="./assets/results2.svg" alt="ARTICLES"/>
-              </div>
-            </div>
-          </div>
+          <div id="buttons-subject"></div>
+
+
           <div class="menu-spacer"></div>
           <div class="panel-spacer"></div>
 
@@ -77,6 +60,7 @@
   <script src="./js/ww_now.js"></script>
   <script src="./js/ww_horz_bars_divider.js"></script>
   <script src="./js/ww_button_group.js"></script>
+  <script src="./js/ww_button_stack.js"></script>
 
   <script src="js/lcars_header.js"></script>
   <script src="js/lcars_content.js"></script>
@@ -109,6 +93,54 @@
     //----------------------------------------------------------------------
     // Create instance of footer passing container id, config, and color map
     let footer = new LcarsFooter("footer-container", config.footer, config.colors);
+
+
+
+
+    let button_stack_uniform_config = {
+        "font_size" : 20, // px
+        "font_color": "black",
+        "width" : 160, // px
+        "height" : 60,
+        "spacing" : "5px",
+        "border_radius" : "5px",
+        "hover_color" : "martian",
+        "button" : [
+            { "txt" : "SHIP", "color" : "fall_leaf", "icon" : "../assets/ship.svg"},
+            { "txt" : "COMPUTER", "color" : "sunflower", "icon" : "../assets/stations.svg"},
+            { "txt" : "PROPULSION", "color" : "moonbeam", "icon" : "../assets/rocket-icon.svg"}
+        ]
+    }
+
+    //---------------------------------------------------------------
+    // Step 4: Define the callbacks for when the buttons are clicked;
+    //         The call back will take the index of the button from
+    //         the config "buttons" list
+    //---------------------------------------------------------------
+
+    function button_uniform(index) {
+
+        // $("#txt-uniform").text(`Going ${button_stack_uniform_config.button[index].txt}`);
+        switch(index) {
+            case 0:
+                console.log("Top View");
+                break;
+            case 1:
+                console.log("Front View");
+                break;
+            case 2:
+                console.log("Side View");
+                break;
+        }
+    }
+
+    //---------------------------------------------------------------------------------
+    // Step 5: Create an instance of each group passing the container id, the attribute
+    //         config, color map, and the callback for that group
+    //---------------------------------------------------------------------------------
+    let button_stack_uniform = new ButtonStack("buttons-subject", button_stack_uniform_config, config.colors, button_uniform);
+
+
 
     // let content = new LcarsContent("content-container", config.content, config.colors, button_stack_subject_callback, button_group_page_callback);
 
