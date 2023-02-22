@@ -48,7 +48,8 @@
     "moss"          : { "hex" : "#8A9A5B", "rgb" : "138,154,91" },
     "willow"        : { "hex" : "#95C860", "rgb" : "149,200,96" },
     "moss"          : { "hex" : "#8A9A5B", "rgb" : "138, 154, 91"},
-    "fall_leaf"     : { "hex" : "#E67642", "rgb" : "235, 118, 66"}
+    "fall_leaf"     : { "hex" : "#E67642", "rgb" : "235, 118, 66"},
+    "gray_skies"     : { "hex" : "#C3D2F0", "rgb" : "195, 210, 240"}
   },
   "left_panel_width" : "160px",
   "header" : {
@@ -95,7 +96,7 @@
       "width"            : "160px",
       "logo_image"       : "./assets/starfleet-logo-3.png",
       "logo_size"        : "60%",
-      "background_color" : "linen",
+      "background_color" : "gray_skies",
       "url"              : "https://www.stevenlyles.net",
       "spacer_size"      : 5,
       "spacer_color"     : "black"
@@ -210,7 +211,7 @@
         },
         {
           "type" : "demarcation",
-          "txt"  : "&#8226;",
+          "txt"  : "&copy;",
           "font_size" : "25px",
           "src" : "",
           "url" : ""
