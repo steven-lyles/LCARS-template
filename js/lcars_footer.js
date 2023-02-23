@@ -22,8 +22,11 @@ class LcarsFooter {
 
     //===================================================================================
     gen_css() {
-        $(".container-frame-left-bottom").css("min-width", this.config.left_panel_width);
+        // $(".container-frame-left-bottom").css("min-width", this.config.left_panel_width);
         $(".container-frame-left-bottom").css("height", `${this.config.height}px`);
+        $(".container-frame-left-bottom").css("width", `${this.config.panel.width}px`);
+        $(".container-frame-left-bottom").css("min-width", `${this.config.panel.width}px`);
+
         $(".container-frame-left-bottom").css("background-color", this.colors[ this.config.panel.background_color ].hex);
         $(".container-frame-left-bottom").css("border-radius", `0 0 0 ${this.config.panel.radius}px`);
 

@@ -39,6 +39,8 @@ class LcarsHeader {
     //===================================================================================
     gen_css() {
         $(".header-height").css("height", `${this.config.height}px`);
+        $(".header-left-panel-width").css("width", `${this.config.panel.width}px`);
+        $(".header-left-panel-width").css("min-width", `${this.config.panel.width}px`);
 
         $(".container-frame-left-top").css("background-color", this.colors[this.config.panel.background_color].hex);
         $(".container-frame-left-top").css("border-radius", `0 0 0 ${this.config.panel.radius}px`);
@@ -84,10 +86,13 @@ class LcarsHeader {
     gen_widget() {
         $(`#${this.id}`).append("<div id='header' class='container-header header-height'></div>");
         $("#header").append("<div id='header-row' class='container-row'></div>");
-        $("#header-row").append("<div id='header-frame-left-top' class='container-frame-left container-frame-left-top left-panel-width header-height'> </div>");
+        $("#header-row").append("<div id='header-frame-left-top' class='container-frame-left container-frame-left-top header-left-panel-width header-height'> </div>");
 
-        let header_logo = new Logo("header-frame-left-top", this.config.logo, this.colors);
-        let header_time = new Now("header-frame-left-top", this.config.now, this.colors);
+        this.config.panel.logo.width = `${this.config.panel.width}px`;
+        let header_logo = new Logo("header-frame-left-top", this.config.panel.logo, this.colors);
+
+        this.config.panel.now.font_size = Math.round(this.config.panel.width * 0.15);
+        let header_time = new Now("header-frame-left-top", this.config.panel.now, this.colors);
 
         $("#header-row").append("<div id='header-frame-right-top' class='container-frame-right header-height'></div>");
 

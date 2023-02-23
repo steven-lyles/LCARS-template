@@ -51,12 +51,28 @@
     "fall_leaf"     : { "hex" : "#E67642", "rgb" : "235, 118, 66"},
     "gray_skies"     : { "hex" : "#C3D2F0", "rgb" : "195, 210, 240"}
   },
-  "left_panel_width" : "160px",
+
   "header" : {
     "height" : 230,
     "panel" : {
       "background_color" : "evening",
-      "radius" : "90"
+      "radius" : "90",
+      "width" : 160,
+      "logo" : {
+        "height"           : "110px",
+        "width"            : "",
+        "logo_image"       : "./assets/starfleet-logo-3.png",
+        "logo_size"        : "60%",
+        "background_color" : "gray_skies",
+        "url"              : "https://www.stevenlyles.net",
+        "spacer_size"      : 5,
+        "spacer_color"     : "black"
+      },
+      "now" : {
+        "compact"    : true,
+        "font_size"  : 24,
+        "font_color" : "black"
+      }
     },
     "banner" : {
       "title_primary"  : "LCARS",
@@ -90,22 +106,6 @@
         { "txt": "Navigation", "active" : true },
         { "txt": "Weapons", "active" : true }
       ]
-    },
-    "logo" : {
-      "height"           : "110px",
-      "width"            : "160px",
-      "logo_image"       : "./assets/starfleet-logo-3.png",
-      "logo_size"        : "60%",
-      "background_color" : "gray_skies",
-      "url"              : "https://www.stevenlyles.net",
-      "spacer_size"      : 5,
-      "spacer_color"     : "black"
-    },
-    "now" : {
-      "font_size"        : "24",
-      "font_color"       : "black",
-      "width"            : "100%",
-      "border_radius"    : "22"
     },
     "corner" : {
       "width" : 40,
@@ -162,6 +162,7 @@
   "footer" : {
     "height" : 100,
     "panel" : {
+      "width" : 160,
       "background_color" : "evening",
       "radius" : "90"
     },

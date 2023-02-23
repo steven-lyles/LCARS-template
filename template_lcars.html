@@ -28,6 +28,38 @@
     <!-- =========================== -->
     <div id="header-container"></div>
 
+<!--    <div id="now-compact" class="now-compact">-->
+
+<!--      <div class="now-compact-row now-compact-txt-row">-->
+<!--        <div id="now-compact-meridian">&nbsp; AM</div>-->
+<!--        <div class="now-compact-spacer"></div>-->
+<!--        <div id="now-compact-zone">PST</div>-->
+<!--      </div>-->
+
+<!--      <div class="now-compact-row">-->
+<!--        <div id="now-compact-hour">07</div>-->
+<!--        <div class="now-compact-spacer"> </div>-->
+<!--        <div id="now-compact-year">23</div>-->
+<!--      </div>-->
+
+<!--      <div class="now-compact-row">-->
+<!--        <div id="now-compact-min">16</div>-->
+<!--        <div class="now-compact-spacer"> </div>-->
+<!--        <div id="now-compact-month">02</div>-->
+<!--      </div>-->
+
+<!--      <div class="now-compact-row">-->
+<!--        <div id="now-compact-sec">43</div>-->
+<!--        <div class="now-compact-spacer"> </div>-->
+<!--        <div id="now-compact-day">23</div>-->
+<!--      </div>-->
+
+<!--      <div class="now-compact-row now-compact-txt-row">-->
+<!--        <div id="now-compact-day-txt">Thursday</div>-->
+<!--      </div>-->
+<!--      -->
+<!--    </div>-->
+
     <!-- ============================ -->
     <!-- Create container for content -->
     <!-- ============================ -->
@@ -79,9 +111,12 @@
     let json = $.getJSON({'url': './config/template_lcars.json', 'async': false});
     config = JSON.parse(json.responseText);
 
-    $(".left-panel-width").css("width", config.left_panel_width);
+    //----------------------------------------
+    // set the width for the pages left panels
+    // $(".left-panel-width").css("width", config.left_panel_width);
+    // $(".left-panel-width").css("min-width", config.left_panel_width);
 
-    config.footer["left_panel_width"] = config.left_panel_width; // this is hack and needs to be figured out!!!
+    // config.footer["left_panel_width"] = config.left_panel_width; // this is hack and needs to be figured out!!!
 
     //==================================================================================================================
     // HEADER
