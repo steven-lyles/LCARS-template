@@ -57,6 +57,29 @@ a {
     /*background-color: #b3a68b;*/
 }
 
+.corner-bg {
+    width: 50px;
+    height: 40px;
+    background: #25f;
+}
+.corner {
+    width: 50px;
+    height: 40px;
+    background: #000;
+    border-radius: 40px 0 0 0;
+}
+
+#content-subject-block {
+    background-color: #444a77;
+    height: 100px;
+}
+
+#content-pages-block {
+    background-color: antiquewhite;
+    height: 100%;
+    flex: 1 1 auto;
+}
+
 /*.now-compact {*/
 /*    width : 160px;*/
 /*    min-width: 160px;*/
@@ -95,9 +118,12 @@ a {
 
 /* Content Styling */
 .container-content {
-    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    /*flex: 1 1 auto;*/
     margin-bottom: 5px;
-
+    height: 100%;
+    overflow: hidden;
     /* dev only remove */
     border-radius: 80px 0 0 0;
     /*background-color: #444a77;*/
@@ -112,6 +138,17 @@ a {
     width: 160px;
     height: 100%;
 
+    /*background-color: pink;*/
+    border-radius: 80px 0 0 0;
+}
+.panel-corner-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 100px;
+    background: #2255ff;
     /*background-color: pink;*/
     border-radius: 80px 0 0 0;
 }
@@ -181,9 +218,15 @@ a {
     /*height: 200px;*/
 }
 .panel-spacer {
-    background-color: #25f;
+    background-color: #2255ff;
     width: 160px;
-    flex: 1 1 auto;
+    flex: 1;
+    /*flex: 1 1 100%;*/
+}
+.subject-icon {
+    height: 2.5em;
+    /*margin-bottom: 5px;*/
+    /*margin-right: 15px;*/
 }
 
 /* Footer Stuff */
@@ -216,6 +259,15 @@ a {
 /*    !*border-style: solid;*!*/
 /*    !*border-width: 1px;*!*/
 /*    !*border-color: #2d2d2d;*!*/
+/*}*/
+
+/*.block-footer {*/
+/*    position: fixed;*/
+/*    bottom: 0;*/
+/*    margin-bottom: 10px;*/
+/*    height: 150px;*/
+/*    width: 100%;*/
+/*    background-color: antiquewhite;*/
 /*}*/
 
 

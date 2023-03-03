@@ -21,6 +21,9 @@ class Logo {
     }
 
     //===================================================================================
+    set_logo_to(logo_url) { $(".panel-logo").css("background-image", `url(${logo_url})`); }
+
+    //===================================================================================
     gen_css() {
         // $(".panel-logo").css("display", "block");
         $(".panel-logo").css("height", this.config.height);

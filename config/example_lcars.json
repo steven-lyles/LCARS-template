@@ -1,5 +1,5 @@
 {
-  "colors" : {
+  "color_map" : {
     "black"         : { "hex" : "#000000", "rgb" : "0,0,0"},
     "white"         : { "hex" : "#ffffff", "rgb" : "255,255,255"},
     "ghost"         : { "hex" : "#88bbff", "rgb" : "136,187,255"},
@@ -47,16 +47,21 @@
     "green_slate"   : { "hex" : "#A0C092", "rgb" : "160,192,146" },
     "moss"          : { "hex" : "#8A9A5B", "rgb" : "138,154,91" },
     "willow"        : { "hex" : "#95C860", "rgb" : "149,200,96" },
-    "moss"          : { "hex" : "#8A9A5B", "rgb" : "138, 154, 91"},
     "fall_leaf"     : { "hex" : "#E67642", "rgb" : "235, 118, 66"},
     "gray_skies"    : { "hex" : "#C3D2F0", "rgb" : "195, 210, 240"}
   },
-
+  "color" : {
+    "panel" : "calm"
+  },
+  "general" : {
+    "panel_width" : 100,
+    "panel_outer_corner_radius" : 80,
+    "panel_inner_corner_radius" : 40
+  },
   "header" : {
     "height" : 230,
     "panel" : {
       "background_color" : "evening",
-      "radius" : "90",
       "width" : 160,
       "logo" : {
         "height"           : "110px",
@@ -78,11 +83,12 @@
       "title_primary"  : "LCARS",
       "title_secondary": "ONLINE",
       "height" : 60,
-      "font_color" : "ghost"
+      "font_color" : "ghost",
+      "font" : "\"Antonio\", sans-serif"
     },
     "msg" : {
       "text" : "This template creates the basic LCARS header",
-      "height" : "20px",
+      "height" : 20,
       "font_color" : "white",
       "font" : "400 16px/1.5 'Arial Narrow', sans-serif"
     },
@@ -129,64 +135,6 @@
           "flex": false,
           "half": false,
           "width": "40px",
-          "color": "sunflower"
-        },
-        {
-          "flex": false,
-          "half": false,
-          "width": "200px",
-          "color": "cool"
-        },
-        {
-          "flex": true,
-          "half": false,
-          "width": "200px",
-          "color": "evening"
-        },
-        {
-          "flex": false,
-          "half": false,
-          "width": "50px",
-          "color": "galaxy"
-        }
-      ]
-    }
-  },
-  "content" : {
-    "panel_home" : {
-      "height" : 100,
-      "background_color" : "evening",
-      "radius" : "80px"
-    },
-    "button_stack_subject_config" : {
-      "font_size" : 20,
-      "font_color": "black",
-      "width" : 160,
-      "height" : 60,
-      "spacing" : "5px",
-      "border_radius" : "5px",
-      "hover_color" : "martian",
-      "button" : [
-        { "txt" : "SYSTEMS", "color" : "fall_leaf", "icon" : "../assets/ship.svg"},
-        { "txt" : "COMPUTER", "color" : "sunflower", "icon" : "../assets/stations.svg"},
-        { "txt" : "PROPULSION", "color" : "moonbeam", "icon" : "../assets/rocket-icon.svg"}
-      ]
-    },
-    "horz_bars_config" : {
-      "height"    : 14,
-      "gap_size"  : 5,
-      "gap_color" : "black",
-      "bars" : [
-        {
-          "flex": true,
-          "half": false,
-          "width": "320px",
-          "color": "evening"
-        },
-        {
-          "flex": false,
-          "half": false,
-          "width": "40px",
           "color": "martian"
         },
         {
@@ -215,11 +163,10 @@
     "height" : 100,
     "panel" : {
       "width" : 160,
-      "background_color" : "evening",
-      "radius" : "90"
+      "background_color" : "evening"
     },
     "content" : {
-      "height" : "42px",
+      "height" : "22px",
       "font_size" : "15px",
       "font_color" : "ice",
       "items" : [

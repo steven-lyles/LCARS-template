@@ -22,6 +22,12 @@ class LcarsFooter {
 
     //===================================================================================
     gen_css() {
+        $(".block-footer").css("position", "fixed");
+        $(".block-footer").css("bottom", "0");
+        $(".block-footer").css("margin-bottom", "10px");
+        $(".block-footer").css("padding-right", "20px");
+        $(".block-footer").css("width", "97%");
+
         // $(".container-frame-left-bottom").css("min-width", this.config.left_panel_width);
         $(".container-frame-left-bottom").css("height", `${this.config.height}px`);
         $(".container-frame-left-bottom").css("width", `${this.config.panel.width}px`);
@@ -31,8 +37,9 @@ class LcarsFooter {
         $(".container-frame-left-bottom").css("border-radius", `0 0 0 ${this.config.panel.radius}px`);
 
         $(".container-footer").css("height", `${this.config.height}px`);
-        $(".container-footer").css("flex", `0 1 ${this.config.height}px`);
-        $(".container-footer").css("margin-bottom", "15px");
+        // $(".container-footer").css("flex", `0 1 ${this.config.height}px`);
+        $(".container-footer").css("flex", `0 1 auto`); 
+        // $(".container-footer").css("margin-bottom", "5px");
         // $(".container-footer").css("overflow", "hidden");
 
         $(".footer-content").css("display", "flex");
@@ -41,6 +48,7 @@ class LcarsFooter {
         $(".footer-content").css("justify-content", "right");
         $(".footer-content").css("height", this.config.content.height);
         $(".footer-content").css("margin-left", "20px");
+        $(".footer-content").css("margin-right", "10px");
         $(".footer-content").css("font-size", this.config.content.font_size);
         // $(".footer-content").css("width", "100%");
         // $(".footer-content").css("background-color", "#A0C092");
@@ -65,12 +73,11 @@ class LcarsFooter {
         $(".footer-corner").css("height", `${this.config.corner.height}px`);
         $(".footer-corner").css("background-color", this.colors[this.config.corner.background_color].hex);
         $(".footer-corner").css("border-radius", this.config.corner.radius);
-
-
     }
 
     //===================================================================================
     gen_widget() {
+        $(`#${this.id}`).attr("class", "block-footer");
         $(`#${this.id}`).append("<div id='footer' class='container-footer'></div>");
         $("#footer").append("<div id='footer-row' class='container-row'></div>");
 

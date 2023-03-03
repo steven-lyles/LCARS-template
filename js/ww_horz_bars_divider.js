@@ -44,9 +44,9 @@ class HorizontalBarsDivider {
         let local_color = this.color;
         let id = this.widget_id;
 
-        $(`#${this.id}`).css("height", this.config.height);
+        $(`#${this.id}`).css("height", `${this.config.height}px`);
         $(`#${this.id}`).css("display", "flex");
-        $(`#${this.id}`).css("flex", "1");
+        $(`#${this.id}`).css("width", "100%");
 
         $(".bar-half").css("display", "flex");
         $(".bar-half").css("flex-direction", "row");
@@ -55,7 +55,7 @@ class HorizontalBarsDivider {
         $.each(this.config.bars, function(index, bar) {
 
             if (bar.flex) {
-                $(`#bar-${id}-${index}`).css("flex", "1");
+                $(`#bar-${id}-${index}`).css("flex", "1 1 auto");
                 $(`#bar-${id}-${index}`).css("transition", "width 1s");
             }
             if (bar.half) {

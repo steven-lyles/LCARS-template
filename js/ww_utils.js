@@ -50,8 +50,8 @@ class DetectOS {
     //===================================================================================
     mobile_os() {
         let mobile = false;
-        if (this.OS == "iPad OS" ||
-            this.OS == "iOS" ||
+        // if (this.OS == "iPad OS" ||
+        if (this.OS == "iOS" ||
             this.OS == "Android") {
             mobile = true;
         }
@@ -209,6 +209,37 @@ class Utils {
     static get_os() {
         let detect = new DetectOS();
         return detect.OS;
+    }
+
+    //===================================================================================
+    static mobile() {
+        let detect = new DetectOS();
+        return detect.mobile_os();
+    }
+
+    //===================================================================================
+    // Returns size based on OS detected so calling code can make decision on rendering
+    // the interface. Desktop: "large"; Tablet: "medium"; Phone: "small"
+    static gui_size() {
+        let size = "large";
+        let detect = new DetectOS();
+        switch(detect.OS) {
+            case "Windows":
+            case "macOS":
+            case "Linux":
+                size = "large";
+                break;
+            case "iPad OS":
+                size = "medium";
+                break;
+            case "iOS":
+            case "Android":
+                size = "small";
+                break;
+            default:
+                break;
+        }
+        return size;
     }
 
     //===================================================================================
