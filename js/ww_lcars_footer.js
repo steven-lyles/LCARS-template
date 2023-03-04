@@ -30,6 +30,7 @@ class LcarsFooter {
   //===================================================================================
   gen_css() {
     $("#footer-panel").css("width", `${this.config.panel.width}px`);
+    $("#footer-panel").css("min-width", `${this.config.panel.width}px`);
     $("#footer-panel").css("height", `${this.config.height}px`);
     $("#footer-panel").css("background-color", this.color_map[this.config.panel.background_color].hex);
     $("#footer-panel").css("border-radius", `0 0 0 ${this.config.panel.width/2}px`);
@@ -57,7 +58,7 @@ class LcarsFooter {
 
   //===================================================================================
   gen_widget() {
-    $(`#${this.id}`).append("<div id='footer-row' class='container-row'></div>");
+    $(`#${this.id}`).append("<div id='footer-row' class='row container-row'></div>");
     $("#footer-row").append("<div id='footer-panel' class='container-panel'></div>");
 
     $("#footer-row").append("<div id='footer-content' class='container-content'></div>");

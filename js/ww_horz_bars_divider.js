@@ -57,6 +57,8 @@ class HorizontalBarsDivider {
             if (bar.flex) {
                 $(`#bar-${id}-${index}`).css("flex", "1 1 auto");
                 $(`#bar-${id}-${index}`).css("transition", "width 1s");
+            } else {
+                $(`#bar-${id}-${index}`).css("flex", "0 0 auto");
             }
             if (bar.half) {
                 $(`#bar-${id}-${index}`).css("height", `${local_config.height/2}px`);

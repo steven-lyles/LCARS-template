@@ -93,12 +93,12 @@
       "font" : "400 16px/1.5 'Arial Narrow', sans-serif"
     },
     "button_group_marquee_config" : {
-      "font" : "400 15px/1.5 \"Antonio\", \"Arial Narrow\", \"Avenir Next Condensed\", sans-serif",
-      "font-size" : "1.2em",
+      "font" : "\"Antonio\", \"Avenir Next Condensed\", sans-serif",
+      "font_size" : "16px",
       "font_color" : "black",
       "background_color" : "parchment",
-      "width" : "100px",
-      "height": "30px",
+      "width" : "120px",
+      "height": "35px",
       "gap" : "10px",
       "justify_content" : "right",
       "border_radius": "30px",
@@ -108,19 +108,71 @@
       "inactive_color" : "galaxy",
       "selected_index" : 0,
       "buttons" : [
-        { "txt": "Engineering", "active" : true },
-        { "txt": "Navigation", "active" : true },
-        { "txt": "Weapons", "active" : true }
+        { "txt": "ENGINEERING", "active" : true },
+        { "txt": "NAVIGATION", "active" : true },
+        { "txt": "WEAPONS", "active" : true }
       ]
     },
     "corner" : {
       "width" : 40,
       "height": 44,
       "foreground_color" : "evening",
-      "background_color" : "black",
-      "radius" : "0 0 0 40px"
+      "background_color" : "black"
     },
     "horz_bars_config" : {
+      "height"    : 14,
+      "gap_size"  : 5,
+      "gap_color" : "black",
+      "bars" : [
+        {
+          "flex": true,
+          "half": false,
+          "width": "320px",
+          "color": "evening"
+        },
+        {
+          "flex": false,
+          "half": false,
+          "width": "40px",
+          "color": "sunflower"
+        },
+        {
+          "flex": false,
+          "half": false,
+          "location" : "bottom",
+          "width": "200px",
+          "color": "cool"
+        },
+        {
+          "flex": true,
+          "half": false,
+          "width": "200px",
+          "color": "evening"
+        },
+        {
+          "flex": false,
+          "half": false,
+          "width": "50px",
+          "color": "galaxy"
+        }
+      ]
+    }
+  },
+  "subjects": {
+    "height": 100,
+    "panel": {
+      "width": 160,
+      "background_color": "evening",
+      "icon": "./assets/ship.svg",
+      "icon_alt" : "&#10024"
+    },
+    "corner" : {
+      "width" : 40,
+      "height": 44,
+      "foreground_color" : "evening",
+      "background_color" : "black"
+    },
+    "horz_bars_div" : {
       "height"    : 14,
       "gap_size"  : 5,
       "gap_color" : "black",
@@ -156,6 +208,87 @@
           "width": "50px",
           "color": "galaxy"
         }
+      ]
+    },
+    "buttons" : {
+      "font" : "\"Antonio\", \"Avenir Next Condensed\", sans-serif",
+      "font_size" : "14px",
+      "font_color" : "black",
+      "background_color" : "parchment",
+      "width" : "80px",
+      "height": "25px",
+      "gap" : "10px",
+      "justify_content" : "right",
+      "border_radius": "30px",
+      "hover_color" : "martian",
+      "hover_outline" : "yellow",
+      "active_color" :  "martian",
+      "inactive_color" : "galaxy",
+      "selected_index" : 0,
+      "buttons" : [
+        { "txt": "Systems", "active" : true },
+        { "txt": "Computer", "active" : true },
+        { "txt": "Propulsion", "active" : true }
+      ]
+    }
+  },
+  "content" : {
+    "panel" : {
+      "width" : 160,
+      "background_color" : "evening",
+      "header_icon" : "./assets/ship.svg",
+      "header_height" : 100
+    },
+    "horz_bars_div" : {
+      "height"    : 14,
+      "gap_size"  : 5,
+      "gap_color" : "black",
+      "bars" : [
+        {
+          "flex": true,
+          "half": false,
+          "width": "320px",
+          "color": "evening"
+        },
+        {
+          "flex": false,
+          "half": false,
+          "width": "40px",
+          "color": "martian"
+        },
+        {
+          "flex": false,
+          "half": true,
+          "location" : "top",
+          "width": "200px",
+          "color": "moonbeam"
+        },
+        {
+          "flex": true,
+          "half": false,
+          "width": "200px",
+          "color": "evening"
+        },
+        {
+          "flex": false,
+          "half": false,
+          "width": "50px",
+          "color": "galaxy"
+        }
+      ]
+    },
+    "button_stack_pages" : {
+      "font_size" : 18,
+      "font_color": "black",
+      "width" : 140,
+      "height" : 50,
+      "spacing" : "5px",
+      "border_radius" : "5px",
+      "hover_color" : "martian",
+      "button" : [
+        { "txt" : "PAGE 1", "color" : "fall_leaf", "icon" : "../assets/ship.svg"},
+        { "txt" : "PAGE 2", "color" : "sunflower", "icon" : "../assets/stations.svg"},
+        { "txt" : "PAGE 3", "color" : "moonbeam", "icon" : "../assets/rocket-icon.svg"}
       ]
     }
   },

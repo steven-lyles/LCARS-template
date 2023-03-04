@@ -67,20 +67,20 @@ class LcarsHeader {
     $(".header-marquee").css("height", `${this.marquee_size()}px`);
     $(".header-marquee").css("padding", "10px");
 
-    $(".header-top-corner-bg").css("width", `${this.config.corner.width}px`);
-    $(".header-top-corner-bg").css("height", `${this.config.corner.height}px`);
-    $(".header-top-corner-bg").css("background-color", this.color_map[this.config.corner.foreground_color].hex);
+    $(".header-panel-corner-bg").css("width", `${this.config.corner.width}px`);
+    $(".header-panel-corner-bg").css("height", `${this.config.corner.height}px`);
+    $(".header-panel-corner-bg").css("background-color", this.color_map[this.config.corner.foreground_color].hex);
 
-    $(".header-top-corner").css("width", `${this.config.corner.width}px`);
-    $(".header-top-corner").css("height", `${this.config.corner.height}px`);
-    $(".header-top-corner").css("background-color", this.color_map[this.config.corner.background_color].hex);
-    $(".header-top-corner").css("border-radius", this.config.corner.radius);
+    $(".header-panel-corner").css("width", `${this.config.corner.width}px`);
+    $(".header-panel-corner").css("height", `${this.config.corner.height}px`);
+    $(".header-panel-corner").css("background-color", this.color_map[this.config.corner.background_color].hex);
+    $(".header-panel-corner").css("border-radius", `0 0 0 ${this.config.corner.width}px`);
   }
 
   //===================================================================================
   gen_widget() {
 
-    $(`#${this.id}`).append("<div id='header-row' class='container-row'></div>");
+    $(`#${this.id}`).append("<div id='header-row' class='row container-row'></div>");
 
     $("#header-row").append("<div id='header-panel' class='container-panel'></div>");
     this.config.panel.logo.width = `${this.config.panel.width}px`;
@@ -97,8 +97,8 @@ class LcarsHeader {
     $("#header-content").append("<div id='header-marquee' class='header-marquee'></div>");
     let button_group_marquee = new ButtonGroup("header-marquee", this.config.button_group_marquee_config, this.color_map, this.callback);
 
-    $("#header-content").append("<div id='header-top-corner-bg' class='header-top-corner-bg'></div>");
-    $("#header-top-corner-bg").append("<div class='header-top-corner'></div>");
+    $("#header-content").append("<div id='header-panel-corner-bg' class='header-panel-corner-bg'></div>");
+    $("#header-panel-corner-bg").append("<div class='header-panel-corner'></div>");
 
     $("#header-content").append("<div id='horz-bars-header'></div>");
     let horz_bars_header = new HorizontalBarsDivider("horz-bars-header", this.config.horz_bars_config, this.color_map);

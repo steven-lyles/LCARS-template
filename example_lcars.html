@@ -25,6 +25,7 @@
   <script src="./js/ww_button_group.js"></script>
   <script src="./js/ww_button_stack.js"></script>
   <script src="js/ww_lcars_header.js"></script>
+  <script src="js/ww_lcars_content.js"></script>
   <script src="js/ww_lcars_footer.js"></script>
   <style>
       html,
@@ -48,18 +49,30 @@
           flex-flow: column;
           height: 100%;
       }
-      .container-row {
+      .row {
           display: flex;
           flex-direction: row;
+
           width: 100%;
           margin: 0 auto;
           overflow: hidden;
           align-self: flex-start;
       }
+      .container-row {
+          overflow: hidden;
+      }
+      .subject-row {
+          overflow: visible;
+          margin-left: 10px;
+          margin-right: 20px;
+          justify-content: space-between;
+      }
+
       .container-panel {
           display: flex;
           flex-direction: column;
           align-items: center;
+          height: 100%;
       }
       .container-content {
           /*display: flex;*/
@@ -86,36 +99,50 @@
           /*background-color: pink;*/
       }
 
-      .page-spacer {
+      .section-spacer {
           height: 5px;
           width: 100%;
       }
 
-      .header {
-          flex: 0 1 auto;
+      .header { flex: 0 1 auto; }
           /* The above is shorthand for:
           flex-grow: 0,
           flex-shrink: 1,
           flex-basis: auto
           */
+      .subjects {
+          flex: 0 1 auto;
+          border-radius: 80px 0 0 0;
 
           /* dev only */
+          /*background-color: pink;*/
+          /*height: 100px;*/
           /*border: 1px dotted grey;*/
       }
 
-      .content {
+      .pages {
           flex: 1 1 auto;
-
-          /* dev only */
           border: 1px dotted grey;
       }
 
       .footer {
           flex: 0 1 100px;
-          margin-bottom: 10px;
+          margin-bottom: 15px;
+      }
 
-          /* dev only */
+      #subjects-control {
           /*border: 1px dotted grey;*/
+          height: 42px;
+          width: 100%;
+      }
+      .subject-title {
+          font: 400 30px/1.5 "Antonio", sans-serif;
+          font-weight: lighter;
+          margin-right: 20px;
+          position: relative;
+          height: auto;
+          padding-bottom: 10px;
+          align-self: center;
       }
 
   </style>
@@ -130,23 +157,50 @@
     ================================================================================================================ -->
     <div id="container-header" class="container-row header"></div>
 
-    <div class="page-spacer"></div>
+    <div class="section-spacer"></div>
 
     <!--
     ================================================================================================================
-    CONTENT Container
+    SUBJECT Container
     ================================================================================================================ -->
-    <div class="container-row content">
+    <div class="row container-row subjects">
+      <div id="subjects-panel" class="container-panel">
+        <img id='subjects-icon' class='subjects-icon' src='./assets/ship.svg' alt=''/>
+      </div>
+      <div id="subjects-content" class="container-content">
+        <div id="subjects-div"></div>
+        <div class="subjects-panel-corner-bg">
+          <div class="subjects-panel-corner"></div>
+        </div>
+        <div id="subjects-control" class="row subject-row">
+          <div id="subjects-buttons"></div>
+          <div id="subjects-title" class="subject-title">
+            <span id="title-nav">ENGINEERING</span>
+            &#149;
+            <span id="title-subject">SYSTEMS</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
 
-    </div> <!-- CONTENT Container -->
+    <div class="section-spacer"></div>
 
-    <div class="page-spacer"></div>
+    <!--
+    ================================================================================================================
+    PAGES Container
+    ================================================================================================================ -->
+    <div class="row container-row pages">
+
+    </div>
+
+    <div class="section-spacer"></div>
 
     <!--
     ================================================================================================================
     FOOTER Container
     ================================================================================================================ -->
-    <div id="container-footer" class="container-row footer">
+    <div id="container-footer" class="row container-row footer">
 
     </div> <!-- FOOTER Container -->
 
@@ -180,10 +234,49 @@
   let header = new LcarsHeader("container-header", config.header, config.color_map, button_group_nav_callback);
 
   //====================================================================================================================
-  // CONTENT
+  // SUBJECTS
   //====================================================================================================================
 
-  // TBD
+  $("#subjects-panel").css("width", `${config.subjects.panel.width}px`);
+  $("#subjects-panel").css("min-width", `${config.subjects.panel.width}px`);
+  $("#subjects-panel").css("height", `${config.subjects.height}px`);
+  $("#subjects-panel").css("background-color", config.color_map[config.subjects.panel.background_color].hex);
+  $("#subjects-panel").css("justify-content", "center");
+
+  $("#subjects-icon").css("height", `${config.subjects.height*0.6}px`);
+
+  $(".subjects-panel-corner-bg").css("width", `${config.subjects.corner.width}px`);
+  $(".subjects-panel-corner-bg").css("height", `${config.subjects.corner.height}px`);
+  $(".subjects-panel-corner-bg").css("background-color", config.color_map[config.subjects.corner.foreground_color].hex);
+
+  $(".subjects-panel-corner").css("width", `${config.subjects.corner.width}px`);
+  $(".subjects-panel-corner").css("height", `${config.subjects.corner.height}px`);
+  $(".subjects-panel-corner").css("background-color", config.color_map[config.subjects.corner.background_color].hex);
+  $(".subjects-panel-corner").css("border-radius", `${config.subjects.corner.width}px 0 0 0`);
+
+  //--------------------------------------------
+  // Define the callback for the subject buttons
+  function button_subjects_callback(index) {
+    console.log(`Subject Button ${index+1} Clicked`);
+  }
+
+  // $("#subject-icon").attr("src", config.subjects.panel.icon);
+
+  let content_horz_div = new HorizontalBarsDivider("subjects-div", config.subjects.horz_bars_div, config.color_map);
+
+  let subject_buttons = new ButtonGroup("subjects-buttons", config.subjects.buttons, config.color_map, button_subjects_callback);
+
+  //====================================================================================================================
+  // PAGES
+  //====================================================================================================================
+
+  //--------------------------------------------
+  // Define the callback for the page buttons
+  function button_stack_page_callback(index) {
+    console.log(`Page Button ${index+1} Clicked`);
+  }
+
+  // let button_stack_pages = new ButtonStack("buttons-pages", config.content.button_stack_pages, config.color_map, button_stack_page_callback);
 
   //====================================================================================================================
   // FOOTER
