@@ -160,6 +160,11 @@
   },
   "subjects": {
     "height": 100,
+    "title": {
+      "font": "400 30px/1.5 \"Antonio\", sans-serif",
+      "nav": "ENGINEERING",
+      "subject": "Systems"
+    },
     "panel": {
       "width": 160,
       "background_color": "evening",
