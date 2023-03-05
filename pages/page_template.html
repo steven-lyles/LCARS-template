@@ -1,0 +1,320 @@
+<!--
+ * ======================================================================================
+ * Web Widgets: Demo Page Template
+ * Copyright © Steven M. Lyles
+ * https://github.com/steven-lyles/web-widgets
+ * https://www.stevenlyles.net
+ * =====================================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link id="font-main" href='' rel='stylesheet'>
+  <link rel="icon" href="https://stevenlyles.net/assets/graphics/true-north.png">
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+      html, body {
+          height: 100%;
+          font: 400 20px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif;
+          margin-left: 5px;
+          overflow: hidden;
+      }
+      body {
+          margin: 0;
+      }
+      a {
+          cursor: pointer;
+          text-decoration: none;
+          color: #2255ff;
+      }
+      .width-frame-left { width: 40px; }
+      .height-header { height: 280px; }
+      .corner_size { width: 40px; height: 40px; }
+
+      .container-main {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+      }
+      .container-header {
+          width: 100%;
+          flex: 0 0 auto;
+          margin-bottom: 5px;
+      }
+      .container-content {
+          flex: 1 1 auto;
+      }
+      .container-frames {
+          display: flex;
+          height: 100%;
+          flex-direction: row;
+      }
+      .container-frame-right-header {
+          flex: 1 1 auto;
+          width: auto;
+      }
+      .container-frame-right-content {
+          flex: 1 1 auto;
+          width: auto;
+          min-width: 500px;
+      }
+      .container-frame-left-top {
+          display: flex;
+          flex-direction: column;
+      }
+      .panel-header-frame {}
+      .container-frame-left-middle {
+          display: flex;
+          flex-direction: column;
+      }
+      .panel-home {}
+
+      .corner-bg-header {
+          display: flex;
+          flex-direction: row;
+          align-items: self-start;
+          justify-content: flex-end;
+      }
+      .corner-header {}
+      .corner-bg-content {}
+      .corner-content {}
+      .panel-spacer {
+          height: auto;
+          flex: 1 1 auto;
+      }
+      .demo-desc {
+          font: 400 14px/1.5 "Arial Narrow", sans-serif;
+          justify-content: left;
+          margin-left: 20px;
+          margin-right: 20px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          overflow: auto;
+      }
+      .content {
+          font: 400 18px/1.5 "Arial Narrow", sans-serif;
+          justify-content: left;
+          margin-left: 20px;
+          margin-right: 20px;
+      }
+      #content {
+          height: 865px; /* this needs to set to minimum that holds the content*/
+          overflow-y: auto;
+      }
+
+  </style>
+</head>
+<body>
+<!-- The main container for the page -->
+<div id="container-main" class="container-main">
+
+  <!-- The header container for the page -->
+<!--  <div id="container-header" class="container-header height-header">-->
+
+<!--    <div class="container-frames">-->
+
+<!--      <div class="container-frame-left-top width-frame-left height-header">-->
+<!--        <div class="panel-header-frame width-frame-left height-header"></div>-->
+<!--      </div>-->
+
+<!--      <div id="container-frame-right-header" class="container-frame-right-header height-header">-->
+
+<!--        <div id="demo-desc" class="demo-desc">-->
+<!--          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor-->
+<!--          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis-->
+<!--          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.-->
+<!--        </div>-->
+
+<!--        <div class="corner-bg-header corner_size">-->
+<!--          <div class="corner-header corner_size"></div>-->
+<!--        </div>-->
+
+<!--        <div id="horz-divider-subject">-->
+<!--          &lt;!&ndash; Horizontal Bars Divider Widget will appear here &ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+
+<!--  </div> &lt;!&ndash; #container-header &ndash;&gt;-->
+
+  <div id="container-content" class="container-content">
+
+    <div class="container-frames">
+
+      <div class="container-frame-left-middle width-frame-left">
+        <div class="panel-home width-frame-left"></div>
+        <div class="panel-spacer width-frame-left"></div>
+      </div>
+
+      <div id="container-frame-right-content" class="container-frame-right-content">
+
+        <div id="horz-divider-bars">
+          <!-- Horizontal Bars Divider Widget will appear here -->
+        </div>
+
+        <div id="corner-bg-content" class="corner-bg-content corner_size">
+          <div class="corner-content corner_size"></div>
+        </div>
+
+        <div id="content" class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+
+      </div>
+    </div>
+
+  </div> <!-- #container-content -->
+
+
+</div> <!-- #container-main -->
+<!-- Load the utilities - this is required by the widgets!!! -->
+<script type="text/javascript" src="../js/ww_utils.js"></script>
+
+<!-- Load the widget objects -->
+<script type="text/javascript" src="../js/ww_subject_divider.js"></script>
+<script type="text/javascript" src="../js/ww_horz_bars_divider.js"></script>
+<script>
+
+    // Load the color map
+    let json = $.getJSON({'url': "../config/color_map.json", 'async': false});
+    let colors = JSON.parse(json.responseText);
+
+    let demo_config = {
+        "color_frames"     : "autumn",
+        "color_background" : "black",
+        "color_desc"       : "ghost",
+        "height_header": 140,
+        "corner_height": 40,
+        "corner_width" : 40,
+        "corner_radius": 40
+    }
+
+    let subject_div_config = {
+        "color": "",
+        "txt_primary" : "PAGE",
+        "txt_secondary" : "TEMPLATE",
+        "height" : 30, // px
+        "font" : "Antonio",
+        "font_color" : "moonbeam"
+    }
+    subject_div_config.color = demo_config.color_frames;
+    let web_widgets_div = new SubjectDivider("horz-divider-subject", subject_div_config, colors);
+
+    let bar_div_config = {
+        "height"    : 15,        // in pixels; vertical height of divider bars
+        "gap_size"  : 5,         // in pixels; size of gap between bars (always on right)
+        "gap_color" : "black",   // color of gap between bars; should match page background
+        "bars" : [
+            {
+                "flex": true,      // bar can stretch to width or shrink as window is resized
+                "half": false,     // bar is half height as a demarcation
+                "width": "320px",  // horizontal width of bar
+                "color": ""        // bar color (reference color_map.json)
+            },
+            {
+                "flex": false,
+                "half": true,
+                "location" : "top",
+                "width": "120px",
+                "color": "moonbeam"
+            },
+            {
+                "flex": true,
+                "half": false,
+                "width": "200px",
+                "color": ""
+            },
+            {
+                "flex": false,
+                "half": false,
+                "width": "50px",
+                "color": "galaxy"
+            }
+        ]
+    }
+    bar_div_config.gap_color = demo_config.color_background;
+    bar_div_config.bars[0].color = demo_config.color_frames;
+    bar_div_config.bars[2].color = demo_config.color_frames;
+    let bar_div_1 = new HorizontalBarsDivider("horz-divider-bars", bar_div_config, colors);
+
+    let frame_color = colors[ demo_config.color_frames ].hex;
+    let background_color = colors[ demo_config.color_background ].hex;
+    let desc_color = colors[ demo_config.color_desc ].hex;
+
+    $(".width-frame-left").css("width", `${subject_div_config['height'] + 10}px`);
+    $(".height-header").css("height", `${demo_config['height_header']}px`);
+    let desc_height = demo_config['height_header'] - demo_config['corner_height'] - subject_div_config['height'] - 10; // 10 is for top margin
+    $(".demo-desc").css("height", `${desc_height}px`);
+    $(".corner_size").css("width", `${demo_config['corner_width']}px`);
+    $(".corner_size").css("height", `${demo_config['corner_height']-10}px`);
+    $(".corner-header").css("border-radius", `0 0 0 ${subject_div_config['height'] - 10}px`);
+    $(".corner-content").css("border-radius", `${subject_div_config['height']}px 0 0 0`);
+
+    $(".panel-home").css("height", `${demo_config['corner_height'] + demo_config['corner_height']/2}px`);
+    $(".panel-home").css("border-radius", `${demo_config['corner_height']}px 0 0 0`);
+    $(".panel-home").css("background-color", frame_color);
+
+    $(".panel-header-frame").css("background-color", frame_color);
+    $(".panel-header-frame").css("border-radius", `0 0 0 ${demo_config['corner_height']}px`);
+
+    $(".corner-bg-header").css("background-color", frame_color);
+    $(".corner-bg-content").css("background-color", frame_color);
+    $(".corner-header").css("background-color", background_color);
+    $(".corner-content").css("background-color", background_color);
+
+    $(".panel-spacer").css("background-color", frame_color);
+
+    $("html").css("background", background_color);
+    $("body").css("background", background_color);
+    $("html").css("color", desc_color);
+    $("body").css("color", desc_color);
+
+    let height_header = get_div_size('container-frame-right-header').height;
+    let height_content = get_div_size('content').height;
+    let height_corner = get_div_size('corner-bg-content').height;
+    let height_div_bars = bar_div_config.height;
+
+    //===================================================================================
+    function get_div_size(div_id) {
+        var element = document.getElementById(div_id);
+        var positionInfo = element.getBoundingClientRect();
+        return { "width" : positionInfo.width, "height" : positionInfo.height }
+    }
+
+    //===================================================================================
+    function calculate_sizes() {
+        let height_window = window.innerHeight - 25; // 25 accounts from margins in divs
+
+        let href = $(location).attr('href');
+        let data = href.split('?')[1];
+        if (data !== undefined) {
+          if (data.split(":")[0] === "header") {
+              var h = data.split(":")[1];
+              height_window -= parseInt(h.replace('px', ''));
+          }
+        }
+        let other = height_window - height_header - height_div_bars - height_corner;
+        if (other < height_content) {
+            $("#content").css("height", `${other-10}px`);
+        } else {
+            $("#content").css("height", "auto");
+        }
+    }
+
+    //===================================================================================
+    $(document).ready(function() {
+        calculate_sizes();
+        $(window).resize(function() {
+            calculate_sizes();
+        });
+    }); // document ready
+
+</script>
+</body>
+</html>

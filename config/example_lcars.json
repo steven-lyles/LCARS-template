@@ -53,11 +53,6 @@
   "color" : {
     "panel" : "calm"
   },
-  "general" : {
-    "panel_width" : 100,
-    "panel_outer_corner_radius" : 80,
-    "panel_inner_corner_radius" : 40
-  },
   "header" : {
     "height" : 230,
     "panel" : {
@@ -159,99 +154,115 @@
     }
   },
   "subjects": {
-    "height": 100,
-    "title": {
-      "font": "400 35px/1.5 \"Antonio\", sans-serif",
-      "page": "sensors"
-    },
-    "panel": {
-      "width": 160,
-      "background_color": "evening",
-      "icon": "./assets/ship.svg",
-      "icon_alt" : "&#10024"
-    },
-    "corner" : {
-      "width" : 40,
-      "height": 44,
-      "foreground_color" : "evening",
-      "background_color" : "black"
-    },
-    "horz_bars_div" : {
-      "height"    : 14,
-      "gap_size"  : 5,
-      "gap_color" : "black",
-      "bars" : [
+      "height": 100,
+      "title": {
+        "font": "400 35px/1.5 \"Antonio\", sans-serif",
+        "page": "schematic"
+      },
+      "panel": {
+        "width": 160,
+        "background_color": "evening",
+        "icon": "./assets/ship.png",
+        "icon_alt" : "&#10024"
+      },
+      "corner" : {
+        "width" : 40,
+        "height": 44,
+        "foreground_color" : "evening",
+        "background_color" : "black"
+      },
+      "horz_bars_div" : {
+        "height"    : 14,
+        "gap_size"  : 5,
+        "gap_color" : "black",
+        "bars" : [
+          {
+            "flex": true,
+            "half": false,
+            "width": "320px",
+            "color": "evening"
+          },
+          {
+            "flex": false,
+            "half": false,
+            "width": "40px",
+            "color": "martian"
+          },
+          {
+            "flex": false,
+            "half": true,
+            "location" : "top",
+            "width": "200px",
+            "color": "moonbeam"
+          },
+          {
+            "flex": true,
+            "half": false,
+            "width": "200px",
+            "color": "evening"
+          },
+          {
+            "flex": false,
+            "half": false,
+            "width": "50px",
+            "color": "galaxy"
+          }
+        ]
+      },
+      "buttons" : [
         {
-          "flex": true,
-          "half": false,
-          "width": "320px",
-          "color": "evening"
+          "font" : "\"Antonio\", \"Avenir Next Condensed\", sans-serif",
+          "font_size" : "14px",
+          "font_color" : "black",
+          "background_color" : "parchment",
+          "width" : "80px",
+          "height": "25px",
+          "gap" : "10px",
+          "justify_content" : "right",
+          "border_radius": "30px",
+          "hover_color" : "martian",
+          "hover_outline" : "yellow",
+          "active_color" :  "martian",
+          "inactive_color" : "galaxy",
+          "selected_index" : 0,
+          "buttons" : [
+            { "txt": "Systems", "active" : true, "icon" : "../assets/ship.png" },
+            { "txt": "Computer", "active" : true, "icon" : "../assets/network.png" },
+            { "txt": "Propulsion", "active" : true, "icon" : "../assets/rocket-icon.png" }
+          ]
         },
         {
-          "flex": false,
-          "half": false,
-          "width": "40px",
-          "color": "martian"
+
         },
         {
-          "flex": false,
-          "half": true,
-          "location" : "top",
-          "width": "200px",
-          "color": "moonbeam"
-        },
-        {
-          "flex": true,
-          "half": false,
-          "width": "200px",
-          "color": "evening"
-        },
-        {
-          "flex": false,
-          "half": false,
-          "width": "50px",
-          "color": "galaxy"
+
         }
       ]
     },
-    "buttons" : {
-      "font" : "\"Antonio\", \"Avenir Next Condensed\", sans-serif",
-      "font_size" : "14px",
-      "font_color" : "black",
-      "background_color" : "parchment",
-      "width" : "80px",
-      "height": "25px",
-      "gap" : "10px",
-      "justify_content" : "right",
-      "border_radius": "30px",
-      "hover_color" : "martian",
-      "hover_outline" : "yellow",
-      "active_color" :  "martian",
-      "inactive_color" : "galaxy",
-      "selected_index" : 0,
-      "buttons" : [
-        { "txt": "Systems", "active" : true },
-        { "txt": "Computer", "active" : true },
-        { "txt": "Propulsion", "active" : true }
-      ]
-    }
-  },
   "pages" : {
-    "button_stack_pages" : {
-      "background_color" : "black",
-      "font_size" : 16,
-      "font_color": "black",
-      "width" : 160,
-      "height" : 50,
-      "spacing" : "5px",
-      "border_radius" : "5px",
-      "hover_color" : "martian",
-      "button" : [
-        { "txt" : "SENSORS", "color" : "fall_leaf", "icon" : "../assets/sensors.svg"},
-        { "txt" : "ENVIRONMENTAL", "color" : "sunflower", "icon" : "../assets/config.svg"},
-        { "txt" : "MECHANICAL", "color" : "moonbeam", "icon" : "../assets/gear.svg"}
-      ]
-    }
+    "button_stack_pages" : [
+      {
+        "background_color" : "black",
+        "font_size" : 16,
+        "font_color": "black",
+        "width" : 160,
+        "height" : 50,
+        "spacing" : "5px",
+        "border_radius" : "5px",
+        "hover_color" : "martian",
+        "button" : [
+          { "txt" : "SCHEMATIC", "color" : "autumn", "icon" : "../assets/engineering.svg"},
+          { "txt" : "ENVIRONMENTAL", "color" : "green_slate", "icon" : "../assets/heat.svg"},
+          { "txt" : "MECHANICAL", "color" : "moonbeam", "icon" : "../assets/gear.svg"}
+        ]
+      },
+      {
+
+      },
+      {
+
+      }
+    ]
   },
   "footer" : {
     "height" : 100,

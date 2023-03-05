@@ -41,6 +41,16 @@ class LcarsSubjectPanel {
   }
 
   //===================================================================================
+  set_title_to(str) {
+    $("#subjects-title").text(str);
+  }
+
+  //===================================================================================
+  set_icon_to(icon_path) {
+    $("#subjects-icon").attr("src", icon_path);
+  }
+
+  //===================================================================================
   gen_css() {
     $("#subjects-panel").css("width", `${this.config.panel.width}px`);
     $("#subjects-panel").css("min-width", `${this.config.panel.width}px`);
@@ -89,7 +99,7 @@ class LcarsSubjectPanel {
     $("#subjects-content").append("<div id='subjects-control' class='row subject-row'></div>");
     $("#subjects-control").append("<div id='subjects-buttons'></div>");
 
-    let subject_buttons = new ButtonGroup("subjects-buttons", this.config.buttons, this.color_map, this.callback);
+    let subject_buttons = new ButtonGroup("subjects-buttons", this.config.buttons[0], this.color_map, this.callback);
 
     $("#subjects-control").append("<div id='subjects-title' class='subject-title'></div>");
     $("#subjects-title").append(`<span id='title-subject'>${this.config.title.page}</span>`);
