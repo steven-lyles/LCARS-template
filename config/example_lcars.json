@@ -251,9 +251,9 @@
         "border_radius" : "5px",
         "hover_color" : "martian",
         "button" : [
-          { "txt" : "SCHEMATIC", "color" : "autumn", "icon" : "../assets/engineering.svg"},
-          { "txt" : "ENVIRONMENTAL", "color" : "green_slate", "icon" : "../assets/heat.svg"},
-          { "txt" : "MECHANICAL", "color" : "moonbeam", "icon" : "../assets/gear.svg"}
+          { "txt" : "SCHEMATIC", "color" : "autumn", "icon" : "./assets/engineering.svg"},
+          { "txt" : "ENVIRONMENTAL", "color" : "green_slate", "icon" : "./assets/heat.svg"},
+          { "txt" : "MECHANICAL", "color" : "moonbeam", "icon" : "./assets/gear.svg"}
         ]
       },
       {
