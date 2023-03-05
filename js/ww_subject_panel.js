@@ -92,7 +92,7 @@ class LcarsSubjectPanel {
     let subject_buttons = new ButtonGroup("subjects-buttons", this.config.buttons, this.color_map, this.callback);
 
     $("#subjects-control").append("<div id='subjects-title' class='subject-title'></div>");
-    $("#subjects-title").append(`<span id='title-nav'>${this.config.title.nav}</span> &#149; <span id='title-subject'>${this.config.title.subject}</span>`);
+    $("#subjects-title").append(`<span id='title-subject'>${this.config.title.page}</span>`);
 
   }
 

@@ -161,9 +161,8 @@
   "subjects": {
     "height": 100,
     "title": {
-      "font": "400 30px/1.5 \"Antonio\", sans-serif",
-      "nav": "systems",
-      "subject": "page 1"
+      "font": "400 35px/1.5 \"Antonio\", sans-serif",
+      "page": "sensors"
     },
     "panel": {
       "width": 160,
@@ -240,7 +239,7 @@
   "pages" : {
     "button_stack_pages" : {
       "background_color" : "black",
-      "font_size" : 18,
+      "font_size" : 16,
       "font_color": "black",
       "width" : 160,
       "height" : 50,
@@ -248,10 +247,9 @@
       "border_radius" : "5px",
       "hover_color" : "martian",
       "button" : [
-        { "txt" : "PAGE 1", "color" : "fall_leaf", "icon" : "../assets/ship.svg"},
-        { "txt" : "PAGE 2", "color" : "sunflower", "icon" : "../assets/stations.svg"},
-        { "txt" : "PAGE 3", "color" : "moonbeam", "icon" : "../assets/rocket-icon.svg"},
-        { "txt" : "PAGE 4", "color" : "green_slate", "icon" : "../assets/gear.svg"}
+        { "txt" : "SENSORS", "color" : "fall_leaf", "icon" : "../assets/sensors.svg"},
+        { "txt" : "ENVIRONMENTAL", "color" : "sunflower", "icon" : "../assets/config.svg"},
+        { "txt" : "MECHANICAL", "color" : "moonbeam", "icon" : "../assets/gear.svg"}
       ]
     }
   },
