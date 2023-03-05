@@ -46,9 +46,10 @@ class ButtonStack {
     // Generate CSS for this instance based on config attributes
     gen_css() {
         $(`#${this.id}`).css("font", `400 ${this.config.font_size}px/1.5 "Antonio", "Arial Narrow", "Avenir Next Condensed", sans-serif`);
+        $(`#${this.id}`).css("background-color", this.config.color_map[this.config.background_color].hex);
         $(`.button-stack-${this.widget_id}`).css("width", `${this.config.width}px`);
         $(`.button-stack-${this.widget_id}`).css("height", `${this.config.height}px`);
-        $(`.button-stack-${this.widget_id}`).css("margin-top", this.config.spacing);
+        $(`.button-stack-${this.widget_id}`).css("margin-bottom", this.config.spacing);
         $(`.button-stack-${this.widget_id}`).css("border-radius", this.config.border_radius);
         $(`.button-stack-${this.widget_id}`).css("display", "flex");
         $(`.button-stack-${this.widget_id}`).css("flex-direction", "row");

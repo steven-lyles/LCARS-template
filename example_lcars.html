@@ -122,12 +122,25 @@
 
       .pages {
           flex: 1 1 auto;
-          border: 1px dotted grey;
+          /*border: 1px dotted grey;*/
       }
 
       .footer {
           flex: 0 1 100px;
           margin-bottom: 15px;
+      }
+
+
+
+      #pages-panel {
+          width: 160px;
+          min-width: 160px;
+          background-color: #2255ff;
+      }
+
+      #pages-content {
+          /*background-color: #444a77;*/
+          width: 100%;
       }
 
 
@@ -158,6 +171,11 @@
     PAGES Container
     ================================================================================================================ -->
     <div class="row container-row pages">
+
+      <span id="pages-panel" class="container-panel">
+        <div id="pages-buttons"></div>
+      </span>
+      <span id="pages-content"></span>
 
     </div>
 
@@ -222,7 +240,7 @@
     console.log(`Page Button ${index+1} Clicked`);
   }
 
-  // let button_stack_pages = new ButtonStack("buttons-pages", config.content.button_stack_pages, config.color_map, button_stack_page_callback);
+  let button_stack_pages = new ButtonStack("pages-buttons", config.pages.button_stack_pages, config.color_map, button_stack_page_callback);
 
   //====================================================================================================================
   // FOOTER
