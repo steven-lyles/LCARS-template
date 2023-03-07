@@ -25,8 +25,9 @@
   <script src="./js/ww_button_group.js"></script>
   <script src="./js/ww_button_stack.js"></script>
   <script src="js/ww_lcars_header.js"></script>
-  <script src="js/ww_subject_panel.js"></script>
+  <script src="js/ww_lcars_subject.js"></script>
   <script src="js/ww_lcars_footer.js"></script>
+  <script src="js/ww_lcars_page.js"></script>
   <style>
       html,
       body {
@@ -125,29 +126,6 @@
           flex: 0 1 100px;
           margin-bottom: 15px;
       }
-
-
-
-      #pages-panel {
-          width: 160px;
-          min-width: 160px;
-          background-color: #2255ff;
-      }
-
-      #pages-content {
-          width: 100%;
-          overflow: scrol;
-          /*height: 1000px;*/
-      }
-      iframe {
-          height: auto;
-          overflow-y: auto;
-      }
-      #page {
-          width: 100%;
-          height: 100%;
-      }
-
   </style>
 </head>
 <body>
@@ -172,16 +150,7 @@
     ================================================================================================================
     PAGES Container
     ================================================================================================================ -->
-    <div class="row container-row pages">
-
-      <span id="pages-panel" class="container-panel">
-        <div id="pages-buttons"></div>
-      </span>
-      <span id="pages-content">
-        <iframe id="page" src="pages/page_schematic.html" name="page" class="page" frameBorder="0"></iframe>
-      </span>
-
-    </div>
+    <div id="container-pages" class="row container-row pages"></div>
 
     <div class="section-spacer"></div>
 
@@ -235,7 +204,7 @@
     subject_panel.set_icon_to(config.subjects.buttons[current_index_navi].buttons[index].icon);
   }
 
-  let subject_panel = new LcarsSubjectPanel("container-subjects", config.subjects, config.color_map, button_subjects_callback);
+  let subject_panel = new LcarsSubject("container-subjects", config.subjects, config.color_map, button_subjects_callback);
 
   //====================================================================================================================
   // PAGES
@@ -251,7 +220,8 @@
     $("#page").attr("src", `./pages/page_${page_name.toLowerCase()}.html`);
   }
 
-  let button_stack_pages = new ButtonStack("pages-buttons", config.pages.button_stack_pages[0], config.color_map, button_stack_page_callback);
+  // let button_stack_pages = new ButtonStack("pages-buttons", config.pages.button_stack_pages[0], config.color_map, button_stack_page_callback);
+  let page_panel = new LcarsPage("container-pages", config.pages, config.color_map, button_stack_page_callback);
 
   //====================================================================================================================
   // FOOTER

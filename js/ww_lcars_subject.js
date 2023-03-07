@@ -10,7 +10,7 @@
 
 //=======================================================================================
 // Creates a LCARS subject panel
-class LcarsSubjectPanel {
+class LcarsSubject {
   constructor(container_id, config, colors, callback) {
     this.config = config;
     this.id = container_id;
@@ -106,4 +106,4 @@ class LcarsSubjectPanel {
 
   }
 
-} /* class LcarsSubjectPanel */
+} /* class LcarsSubject */

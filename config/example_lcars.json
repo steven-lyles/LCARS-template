@@ -240,6 +240,9 @@
       ]
     },
   "pages" : {
+    "width": "160",
+    "background_color" : "evening",
+    "page_src": "pages/page_schematic.html",
     "button_stack_pages" : [
       {
         "background_color" : "black",
